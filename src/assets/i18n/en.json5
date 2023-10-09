@@ -4732,8 +4732,6 @@
 
   "thumbnail.project.placeholder": "Project Placeholder Image",
 
-  "title": "DSpace",
-
   "thumbnail.orgunit.alt": "OrgUnit Logo",
 
   "thumbnail.orgunit.placeholder": "OrgUnit Placeholder Image",
@@ -4741,6 +4739,8 @@
   "thumbnail.person.alt": "Profile Picture",
 
   "thumbnail.person.placeholder": "No Profile Picture Available",
+
+  "title": "OAKTrust",
 
   "vocabulary-treeview.header": "Hierarchical tree view",
 
