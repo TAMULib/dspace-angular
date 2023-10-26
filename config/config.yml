@@ -3,3 +3,37 @@ rest:
   host: demo.dspace.org
   port: 443
   nameSpace: /server
+
+themes:
+  - name: capstone
+    extends: tamu
+    handle: '1969.1/94971'
+  - name: esl
+    extends: tamu
+    handle: '1969.1/1656'
+  - name: periodicals
+    extends: tamu
+    regex: '1969.1\/94990|1969.1\/6062'
+  - name: image-gallery
+    extends: tamu
+    regex: '1969.1\/91004|1969.1\/590|1969.1\/97046|1969.1\/86434|1969.1\/128952|1969.1\/148733|1969.1\/155981|1969.1\/188336|1969.1\/155981|1969.1\/188335|1969.1\/194556|1969.1\/195994'
+  - name: tamu
+    headTags:
+    - tagName: link
+      attributes:
+        rel: icon
+        href: assets/tamu/images/favicons/favicon.ico
+        sizes: any
+    - tagName: link
+      attributes:
+        rel: icon
+        href: assets/tamu/images/favicons/favicon.svg
+        type: image/svg+xml
+    - tagName: link
+      attributes:
+        rel: apple-touch-icon
+        href: assets/tamu/images/favicons/apple-touch-icon.png
+    - tagName: link
+      attributes:
+        rel: manifest
+        href: assets/tamu/images/favicons/manifest.webmanifest
