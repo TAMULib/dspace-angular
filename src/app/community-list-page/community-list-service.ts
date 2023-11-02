@@ -154,12 +154,11 @@ export class CommunityListService {
       return observableCombineLatest(topComs$, observableCombineLatest([...scopedCollections])).pipe(
         switchMap(([topComs, scopeCols]) => this.transformListOfCommunities(topComs, 0, null, expandedNodes).pipe(
           map((nodes: FlatNode[]) => {
-            const currentCollectionPage = scopeCols.sort((a, b) => b.currentPage - a.currentPage)[0].currentPage;
             const colNodes = scopeCols.map(payload => {
               let cNodes = payload.page.map((collection: Collection) => {
                 return toFlatNode(collection, observableOf(false), 0, false);
               });
-              if (currentCollectionPage < payload.totalPages && currentCollectionPage === payload.currentPage) {
+              if (currentPage < payload.totalPages && currentPage === payload.currentPage) {
                 cNodes = [...cNodes, showMoreFlatNode('collection', 0, null)];
               }
               return cNodes;
