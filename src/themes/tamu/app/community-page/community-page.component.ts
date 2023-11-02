@@ -15,5 +15,5 @@ import { fadeInOut } from '../../../../app/shared/animations/fade';
  * This component represents a detail page for a single community
  */
 export class CommunityPageComponent extends BaseComponent {
-  
+
 }
