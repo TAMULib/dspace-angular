@@ -28,8 +28,13 @@
         <ds-themed-comcol-page-browse-by [id]="communityPayload.id" [contentType]="communityPayload.type">
         </ds-themed-comcol-page-browse-by>
 
+        <!-- TAMU Customization - community collection tree browse -->
+        <ds-community-list [scopeId]="communityPayload.id"></ds-community-list>
+        <!--
         <ds-themed-community-page-sub-community-list [community]="communityPayload"></ds-themed-community-page-sub-community-list>
         <ds-themed-community-page-sub-collection-list [community]="communityPayload"></ds-themed-community-page-sub-collection-list>
+        -->
+        <!-- End TAMU Customization - community collection tree browse -->
       </section>
       <footer  *ngIf="communityPayload.copyrightText"  class="border-top my-5 pt-4">
         <!-- Copyright -->

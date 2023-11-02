@@ -1,5 +1,7 @@
+import { CdkTreeModule } from '@angular/cdk/tree';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommunityListService } from '../../app/community-list-page/community-list-service';
 import { CommunityPageModule } from '../../app/community-page/community-page.module';
 import { NavbarModule } from '../../app/navbar/navbar.module';
 import { RootModule } from '../../app/root.module';
@@ -9,6 +11,7 @@ import { DsoPageModule } from '../../app/shared/dso-page/dso-page.module';
 import { ResultsBackButtonModule } from '../../app/shared/results-back-button/results-back-button.module';
 import { SharedModule } from '../../app/shared/shared.module';
 import { StatisticsModule } from '../../app/statistics/statistics.module';
+import { CommunityListComponent } from './app/community-list-page/community-list/community-list.component';
 import { CommunityPageComponent } from './app/community-page/community-page.component';
 import { HeaderNavbarWrapperComponent } from './app/header-nav-wrapper/header-navbar-wrapper.component';
 import { HeaderComponent } from './app/header/header.component';
@@ -25,6 +28,7 @@ const ENTRY_COMPONENTS = [
 
 const DECLARATIONS = [
   ...ENTRY_COMPONENTS,
+  CommunityListComponent,
   HomeNewsComponent,
   HeaderComponent,
   HeaderNavbarWrapperComponent,
@@ -43,10 +47,12 @@ const DECLARATIONS = [
     DsoPageModule,
     StatisticsModule,
     CommunityPageModule,
+    CdkTreeModule,
   ],
   declarations: DECLARATIONS,
   providers: [
-    ...ENTRY_COMPONENTS.map((component) => ({provide: component}))
+    ...ENTRY_COMPONENTS.map((component) => ({provide: component})),
+    CommunityListService,
   ],
 })
 /**
