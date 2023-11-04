@@ -160,7 +160,7 @@ export class CommunityListService {
                 return toFlatNode(collection, observableOf(false), 0, false);
               });
               if (currentPage < payload.totalPages && currentPage === payload.currentPage) {
-                cNodes = [...cNodes, showMoreFlatNode('collection', 0, null)];
+                cNodes = [...cNodes, showMoreFlatNode(`collection-${uuidv4()}`, 0, null)];
               }
               return cNodes;
             }).reduce((acc, e) => acc.concat(e), []);
