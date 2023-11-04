@@ -244,7 +244,7 @@ describe('CommunityListComponent', () => {
         preventDefault: () => {/**/
         }
       });
-      tick();
+      tick(250);
       fixture.detectChanges();
     }));
 
@@ -259,10 +259,10 @@ describe('CommunityListComponent', () => {
         })).toBeTruthy();
       });
     });
-    it('show more node is gone from end of nodetree', () => {
+    it('show more node is gone from end of nodetree', fakeAsync(() => {
       const showMoreEl = fixture.debugElement.queryAll(By.css('.show-more-node'));
       expect(showMoreEl.length).toEqual(0);
-    });
+    }));
   });
 
   describe('when first expandable node is expanded', () => {
@@ -272,7 +272,7 @@ describe('CommunityListComponent', () => {
       const chevronExpandSpan = fixture.debugElement.query(By.css('.expandable-node button span'));
       if (chevronExpandSpan.nativeElement.classList.contains('fa-chevron-right')) {
         chevronExpand.nativeElement.click();
-        tick();
+        tick(250);
         fixture.detectChanges();
       }
 
@@ -305,7 +305,7 @@ describe('CommunityListComponent', () => {
         const chevronExpandSpan = fixture.debugElement.queryAll(By.css('.expandable-node button span'));
         if (chevronExpandSpan[1].nativeElement.classList.contains('fa-chevron-right')) {
           chevronExpand[1].nativeElement.click();
-          tick();
+          tick(250);
           fixture.detectChanges();
         }
 
