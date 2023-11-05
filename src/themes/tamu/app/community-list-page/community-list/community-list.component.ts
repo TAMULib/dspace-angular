@@ -20,6 +20,8 @@ export class CommunityListComponent extends BaseComponent implements OnInit {
 
   @Input() scopeId!: string;
 
+  @Input() enableExpandCollapseAll = false;
+
   @ViewChildren('toggle') toggle!: QueryList<any>;
 
   isExpanding: BehaviorSubject<boolean>;

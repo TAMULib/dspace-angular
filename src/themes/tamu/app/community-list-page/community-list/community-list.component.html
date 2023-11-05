@@ -1,6 +1,6 @@
 <ds-themed-loading *ngIf="(dataSource.loading$ | async) && !loadingNode" class="ds-themed-loading"></ds-themed-loading>
 <!-- TAMU Customization - expand/collapse all -->
-<div class="row mb-1">
+<div class="row mb-1" *ngIf="enableExpandCollapseAll">
   <div class="col">
     <button (click)="expandAll()" [disabled]="(isExpanding | async)" class="btn btn-outline-primary btn-sm mr-2" role="button">
       <span>{{ 'communityList.expandAll' | translate }}</span>
