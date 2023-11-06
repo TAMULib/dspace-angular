@@ -36,9 +36,14 @@ export class CommunityListComponent extends BaseComponent implements OnInit {
     let anyExpanded = false;
     this.isExpanding.next(true);
 
+    const expandable = this.toggle.filter((node: any) => {
+      return !!node.nativeElement.querySelector('.fa-chevron-right');
+    });
+
     this.dataSource.loading$.pipe(
       distinctUntilChanged(),
-      debounceTime(500),
+      // allow 100 milliseconds per expanded subcommunity
+      debounceTime(expandable.length * 100),
       take(1)
     ).subscribe(() => {
       if (anyExpanded) {
@@ -48,9 +53,7 @@ export class CommunityListComponent extends BaseComponent implements OnInit {
       }
     });
 
-    this.toggle.filter((node: any) => {
-      return !!node.nativeElement.querySelector('.fa-chevron-right');
-    }).forEach((node: any) => {
+    expandable.forEach((node: any) => {
       node.nativeElement.click();
       if (!anyExpanded) {
         anyExpanded = true;
