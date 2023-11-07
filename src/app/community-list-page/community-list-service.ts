@@ -167,7 +167,6 @@ export class CommunityListService {
             return [...nodes, ...colNodes];
           })
         )),
-        // distinctUntilChanged((a: FlatNode[], b: FlatNode[]) => a.length === b.length)
       );
     }
 
