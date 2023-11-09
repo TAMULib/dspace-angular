@@ -1,4 +1,16 @@
 <ds-themed-loading *ngIf="(dataSource.loading$ | async) && !loadingNode" class="ds-themed-loading"></ds-themed-loading>
+<!-- TAMU Customization - expand/collapse all -->
+<div class="row mb-1" *ngIf="enableExpandCollapseAll">
+  <div class="col">
+    <button (click)="expandAll()" [disabled]="(isExpanding | async)" class="btn btn-outline-primary btn-sm mr-2" role="button">
+      <span>{{ 'communityList.expandAll' | translate }}</span>
+    </button>
+    <button (click)="collapseAll()" [disabled]="(isExpanding | async)" class="btn btn-outline-primary btn-sm" role="button">
+      <span>{{ 'communityList.collapseAll' | translate }}</span>
+    </button>
+  </div>
+</div>
+<!-- End TAMU Customization - expand/collapse all -->
 <cdk-tree [dataSource]="dataSource" [treeControl]="treeControl" [trackBy]="trackBy">
   <!-- This is the tree node template for show more node -->
   <cdk-tree-node *cdkTreeNodeDef="let node; when: isShowMore" cdkTreeNodePadding
@@ -8,7 +20,7 @@
         <span class="fa fa-chevron-right invisible" aria-hidden="true"></span>
       </button>
       <div class="align-middle pt-2">
-        <button *ngIf="!(dataSource.loading$ | async)" (click)="getNextPage(node)"
+        <button #viewMore *ngIf="!(dataSource.loading$ | async)" (click)="getNextPage(node)"
            class="btn btn-outline-primary btn-sm" role="button">
            <i class="fas fa-angle-down"></i> {{ 'communityList.showMore' | translate }}
         </button>
@@ -24,7 +36,7 @@
   <cdk-tree-node *cdkTreeNodeDef="let node; when: hasChild" cdkTreeNodePadding
                  class="example-tree-node expandable-node">
     <div class="btn-group">
-      <button type="button" class="btn btn-default" cdkTreeNodeToggle
+      <button #toggle type="button" class="btn btn-default" cdkTreeNodeToggle
               [title]="'toggle ' + dsoNameService.getName(node.payload)"
               [attr.aria-label]="'toggle ' + dsoNameService.getName(node.payload)"
               (click)="toggleExpanded(node)"

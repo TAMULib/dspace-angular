@@ -17,6 +17,7 @@ import { By } from '@angular/platform-browser';
 import { isEmpty, isNotEmpty } from '../../shared/empty.util';
 import { FlatNode } from '../flat-node.model';
 import { RouterLinkWithHref } from '@angular/router';
+import { v4 as uuidv4 } from 'uuid';
 
 describe('CommunityListComponent', () => {
   let component: CommunityListComponent;
@@ -138,7 +139,7 @@ describe('CommunityListComponent', () => {
         }
         if (expandedNodes === null || isEmpty(expandedNodes)) {
           if (showMoreTopComNode) {
-            return observableOf([...mockTopFlatnodesUnexpanded.slice(0, endPageIndex), showMoreFlatNode('community', 0, null)]);
+            return observableOf([...mockTopFlatnodesUnexpanded.slice(0, endPageIndex), showMoreFlatNode(`community-${uuidv4()}`, 0, null)]);
           } else {
             return observableOf(mockTopFlatnodesUnexpanded.slice(0, endPageIndex));
           }
@@ -165,21 +166,21 @@ describe('CommunityListComponent', () => {
                   const endSubComIndex = this.pageSize * expandedParent.currentCommunityPage;
                   flatnodes = [...flatnodes, ...subComFlatnodes.slice(0, endSubComIndex)];
                   if (subComFlatnodes.length > endSubComIndex) {
-                    flatnodes = [...flatnodes, showMoreFlatNode('community', topNode.level + 1, expandedParent)];
+                    flatnodes = [...flatnodes, showMoreFlatNode(`community-${uuidv4()}`, topNode.level + 1, expandedParent)];
                   }
                 }
                 if (isNotEmpty(collFlatnodes)) {
                   const endColIndex = this.pageSize * expandedParent.currentCollectionPage;
                   flatnodes = [...flatnodes, ...collFlatnodes.slice(0, endColIndex)];
                   if (collFlatnodes.length > endColIndex) {
-                    flatnodes = [...flatnodes, showMoreFlatNode('collection', topNode.level + 1, expandedParent)];
+                    flatnodes = [...flatnodes, showMoreFlatNode(`collection-${uuidv4()}`, topNode.level + 1, expandedParent)];
                   }
                 }
               }
             }
           });
           if (showMoreTopComNode) {
-            flatnodes = [...flatnodes, showMoreFlatNode('community', 0, null)];
+            flatnodes = [...flatnodes, showMoreFlatNode(`community-${uuidv4()}`, 0, null)];
           }
           return observableOf(flatnodes);
         }
@@ -244,7 +245,7 @@ describe('CommunityListComponent', () => {
         preventDefault: () => {/**/
         }
       });
-      tick();
+      tick(250);
       fixture.detectChanges();
     }));
 
@@ -259,10 +260,10 @@ describe('CommunityListComponent', () => {
         })).toBeTruthy();
       });
     });
-    it('show more node is gone from end of nodetree', () => {
+    it('show more node is gone from end of nodetree', fakeAsync(() => {
       const showMoreEl = fixture.debugElement.queryAll(By.css('.show-more-node'));
       expect(showMoreEl.length).toEqual(0);
-    });
+    }));
   });
 
   describe('when first expandable node is expanded', () => {
@@ -272,7 +273,7 @@ describe('CommunityListComponent', () => {
       const chevronExpandSpan = fixture.debugElement.query(By.css('.expandable-node button span'));
       if (chevronExpandSpan.nativeElement.classList.contains('fa-chevron-right')) {
         chevronExpand.nativeElement.click();
-        tick();
+        tick(250);
         fixture.detectChanges();
       }
 
@@ -305,7 +306,7 @@ describe('CommunityListComponent', () => {
         const chevronExpandSpan = fixture.debugElement.queryAll(By.css('.expandable-node button span'));
         if (chevronExpandSpan[1].nativeElement.classList.contains('fa-chevron-right')) {
           chevronExpand[1].nativeElement.click();
-          tick();
+          tick(250);
           fixture.detectChanges();
         }
 
