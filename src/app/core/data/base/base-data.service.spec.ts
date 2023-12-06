@@ -568,6 +568,7 @@ describe('BaseDataService', () => {
           // END Bug fix from upstream https://github.com/DSpace/dspace-angular/pull/2731/files
 
 
+
           expectObservable(service.findListByHref(selfLink, findListOptions, false, true, ...linksToFollow)).toBe(expected, values);
         });
       });
