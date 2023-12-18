@@ -12,16 +12,34 @@
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5T4QCXW');</script>
+  })(window,document,'script','dataLayer','%%gtmId%%');</script>
   <!-- End Google Tag Manager -->
 </head>
 
+
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5T4QCXW"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%%gtmId%%"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <ds-app></ds-app>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const gtmId = '%%gtmId%%'; // Replace with the correct variable access
+
+      // Update the Google Tag Manager script
+      let gtmScript = document.querySelector("script[src*='gtm.js']");
+      if (gtmScript) {
+        gtmScript.src = gtmScript.src.replace('%%gtmId%%', gtmId);
+      }
+
+      // Update the noscript iframe
+      let noscriptIframe = document.querySelector("noscript iframe[src*='ns.html']");
+      if (noscriptIframe) {
+        noscriptIframe.src = noscriptIframe.src.replace('%%gtmId%%', gtmId);
+      }
+    });
+  </script> -->
 </body>
 
 <!-- do not include client bundle, it is injected with Zone already loaded -->
