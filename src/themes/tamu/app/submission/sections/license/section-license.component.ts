@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, ElementRef, Inject, ViewChild } from '@an
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DynamicCheckboxModel, DynamicFormLayout, DynamicRadioGroupModel, MATCH_DISABLED } from '@ng-dynamic-forms/core';
 import { TranslateService } from '@ngx-translate/core';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, switchMap, take, tap } from 'rxjs/operators';
 
 import { AuthService } from '../../../../../../app/core/auth/auth.service';
@@ -111,7 +111,6 @@ export class SubmissionSectionLicenseComponent extends BaseComponent {
     private halEndpointService: HALEndpointService,
     private modalService: NgbModal,
     private notificationsService: NotificationsService,
-    private operationsService: SubmissionJsonPatchOperationsService,
     private sectionUploadService: SectionUploadService,
     protected changeDetectorRef: ChangeDetectorRef,
     protected collectionDataService: CollectionDataService,
@@ -282,13 +281,8 @@ export class SubmissionSectionLicenseComponent extends BaseComponent {
    * @returns empty observable
    */
   public onBeforeUpload = () => {
-    const sub: Subscription = this.operationsService.jsonPatchByResourceType(
-      this.submissionService.getSubmissionObjectLinkName(),
-      this.submissionId,
-      'sections')
-      .subscribe();
-    this.subs.push(sub);
-    return sub;
+    this.submissionService.dispatchSave(this.submissionId, true);
+    return this.submissionService.getSubmissionSaveProcessingStatus(this.submissionId);
   };
 
   /**
