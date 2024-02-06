@@ -32,7 +32,7 @@
 
   "error-page.description.404": "page not found",
 
-  "error-page.orcid.generic-error": "An error occurred during login via ORCID. Make sure you have shared your ORCID account email address with DSpace. If the error persists, contact the administrator",
+  "error-page.orcid.generic-error": "An error occurred during login via ORCID. Make sure you have shared your ORCID account email address with OAKTrust. If the error persists, contact the administrator",
 
   "access-status.embargo.listelement.badge": "Embargo",
 
@@ -144,7 +144,7 @@
 
   "admin.registries.metadata.breadcrumbs": "Metadata registry",
 
-  "admin.registries.metadata.description": "The metadata registry maintains a list of all metadata fields available in the repository. These fields may be divided amongst multiple schemas. However, DSpace requires the qualified Dublin Core schema.",
+  "admin.registries.metadata.description": "The metadata registry maintains a list of all metadata fields available in the repository. These fields may be divided amongst multiple schemas. However, OAKTrust requires the qualified Dublin Core schema.",
 
   "admin.registries.metadata.form.create": "Create metadata schema",
 
@@ -778,7 +778,7 @@
 
   "browse.comcol.by.subject": "By Subject",
 
-  "browse.comcol.by.srsc": "By Subject Category",
+  "browse.comcol.by.srsc": "By Department",
 
   "browse.comcol.by.nsi": "By Norwegian Science Index",
 
@@ -802,7 +802,7 @@
 
   "browse.metadata.subject.breadcrumbs": "Browse by Subject",
 
-  "browse.metadata.srsc.breadcrumbs": "Browse by Subject Category",
+  "browse.metadata.srsc.breadcrumbs": "Browse by Department",
 
   "browse.metadata.nsi.breadcrumbs": "Browse by Norwegian Science Index",
 
@@ -1470,7 +1470,7 @@
 
   "dso-selector.set-scope.community.head": "Select a search scope",
 
-  "dso-selector.set-scope.community.button": "Search all of DSpace",
+  "dso-selector.set-scope.community.button": "Search all of OAKTrust",
 
   "dso-selector.set-scope.community.or-divider": "or",
 
@@ -1614,7 +1614,7 @@
 
   "error.validation.metadata.qualifier.max-length": "This field may not contain more than 64 characters",
 
-  "feed.description": "Syndication feed",
+  "feed.description": "RSS feed",
 
   "file-section.error.header": "Error obtaining files for this item",
 
@@ -1838,7 +1838,7 @@
 
   "home.title": "Home",
 
-  "home.top-level-communities.head": "Communities in DSpace",
+  "home.top-level-communities.head": "Communities in OAKTrust",
 
   "home.top-level-communities.help": "Select a community to browse its collections.",
 
@@ -2768,7 +2768,7 @@
 
   "login.form.forgot-password": "Have you forgotten your password?",
 
-  "login.form.header": "Please log in to DSpace",
+  "login.form.header": "Please log in to OAKTrust",
 
   "login.form.new-user": "New user? Click here to register.",
 
@@ -2818,7 +2818,7 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "All of DSpace",
+  "menu.section.browse_global": "Browse OAKTrust",
 
   "menu.section.browse_global_by_author": "By Author",
 
@@ -2826,7 +2826,7 @@
 
   "menu.section.browse_global_by_subject": "By Subject",
 
-  "menu.section.browse_global_by_srsc": "By Subject Category",
+  "menu.section.browse_global_by_srsc": "By Department",
 
   "menu.section.browse_global_by_nsi": "By Norwegian Science Index",
 
@@ -3026,7 +3026,7 @@
 
   "mydspace.status.mydspaceWorkspace": "Workspace",
 
-  "mydspace.title": "MyDSpace",
+  "mydspace.title": "My OAKTrust",
 
   "mydspace.upload.upload-failed": "Error creating new workspace. Please verify the content uploaded before retry.",
 
@@ -3038,7 +3038,7 @@
 
   "mydspace.view-btn": "View",
 
-  "nav.browse.header": "All of DSpace",
+  "nav.browse.header": "All of OAKTrust",
 
   "nav.community-browse.header": "By Community",
 
@@ -3054,7 +3054,7 @@
 
   "nav.main.description": "Main navigation bar",
 
-  "nav.mydspace": "MyDSpace",
+  "nav.mydspace": "My OAKTrust",
 
   "nav.profile": "Profile",
 
@@ -3414,7 +3414,7 @@
 
   "register-page.registration.header": "New user registration",
 
-  "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items to DSpace.",
+  "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items to OAKTrust.",
 
   "register-page.registration.email": "Email Address *",
 
@@ -3496,9 +3496,9 @@
 
   "repository.image.logo": "Repository logo",
 
-  "repository.title": "DSpace Repository",
+  "repository.title": "OAKTrust",
 
-  "repository.title.prefix": "DSpace Repository :: ",
+  "repository.title.prefix": "OAKTrust :: ",
 
   "resource-policies.add.button": "Add",
 
@@ -3842,7 +3842,7 @@
 
   "search.form.search_dspace": "All repository",
 
-  "search.form.scope.all": "All of DSpace",
+  "search.form.scope.all": "All of OAKTrust",
 
   "search.results.head": "Search Results",
 
@@ -3976,9 +3976,9 @@
 
   "submission.import-external.title.none": "Import metadata from an external source",
 
-  "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to DSpace.",
+  "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to OAKTrust.",
 
-  "submission.import-external.back-to-my-dspace": "Back to MyDSpace",
+  "submission.import-external.back-to-my-dspace": "Back to My OAKTrust",
 
   "submission.import-external.search.placeholder": "Search the external source",
 
@@ -4524,7 +4524,7 @@
 
   "submission.sections.accesses.form.until-placeholder": "Until",
 
-  "submission.sections.license.granted-label": "I confirm the license above",
+  "submission.sections.license.granted-label": "I accept the terms of this license.",
 
   "submission.sections.license.required": "You must accept the license",
 
@@ -4742,7 +4742,7 @@
 
   "thumbnail.person.placeholder": "No Profile Picture Available",
 
-  "title": "DSpace",
+  "title": "OAKTrust",
 
   "vocabulary-treeview.header": "Hierarchical tree view",
 
@@ -5234,4 +5234,47 @@
 
   "vocabulary-treeview.search.form.add": "Add",
 
+  "relationships.isAdvisorOf": "Project Advisor",
+
+  "relationships.isSponsorOf": "Client",
+
+  "theme.esl.visit": "Visit the",
+
+  "theme.esl.homepage": "Energy Systems Laboratory Homepage",
+
+  "theme.periodicals.volume": "Volume",
+
+  "theme.periodicals.issue": "Issue",
+
+  "theme.periodicals.browse": "Browse Issue",
+
+  "theme.periodicals.complete": "Download Complete Issue",
+
+  "communityList.expandAll": "Expand All",
+
+  "communityList.collapseAll": "Collapse All",
+
+  "submission.sections.proxy-license.label": "Distribution license: ",
+
+  "submission.sections.proxy-license.header": "Granting a License",
+
+  "submission.sections.proxy-license.last-step-label": "There is one last step:",
+
+  "submission.sections.proxy-license.last-step": "In order for OAKTrust to reproduce, translate and distribute your submission worldwide, you must agree to the following terms.",
+
+  "submission.sections.proxy-license.instructions": "Please select the license that best matches your situation, grant the license by selecting 'I accept the terms of this license.'; and then click '+Deposit'.",
+
+  "submission.sections.proxy-license.upload-label": "Proxy Submission License: ",
+
+  "submission.sections.proxy-license.upload-drop-message": "Drop permission document to attach to the item",
+
+  "submission.sections.proxy-license.upload-instructions": "If you have a separate permission document from the copyright owner authorizing the release of this item, please attach it here.",
+
+  "submission.sections.proxy-license.upload-successful": "Proxy license upload successful",
+
+  "submission.sections.proxy-license.upload-failed": "Proxy license upload failed",
+
+  "submission.sections.proxy-license.remove-successful": "Proxy license remove successful",
+
+  "search.filters.filter.type.head": "Type",
 }
