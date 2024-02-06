@@ -5275,6 +5275,4 @@
   "submission.sections.proxy-license.upload-failed": "Proxy license upload failed",
 
   "submission.sections.proxy-license.remove-successful": "Proxy license remove successful",
-
-  "search.filters.filter.type.head": "Type",
 }
