@@ -61,6 +61,11 @@
                 "bundleName": "dspace-theme"
               },
               {
+                "input": "src/themes/tamu/styles/theme.scss",
+                "inject": false,
+                "bundleName": "tamu-theme"
+              },
+              {
                 "input": "src/themes/rdc/styles/theme.scss",
                 "inject": false,
                 "bundleName": "rdc-theme"
