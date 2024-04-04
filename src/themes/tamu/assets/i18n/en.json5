@@ -1,0 +1,55 @@
+{
+  "title": "data@TAMU",
+
+  "repository.title": "data@TAMU",
+
+  "repository.title.prefix": "data@TAMU :: ",
+
+  "menu.section.browse_global": "Browse data@TAMU",
+
+  "menu.section.browse_global_by_srsc": "By Department",
+
+  "menu.section.browse_global_by_type": "By Type",
+
+  "search.form.scope.all": "All of data@TAMU",
+
+  "dso-selector.set-scope.community.button": "Search all of data@TAMU",
+
+  "home.top-level-communities.head": "Communities in data@TAMU",
+
+  "login.form.header": "Please log in to data@TAMU",
+
+  "communityList.expandAll": "Expand All",
+
+  "communityList.collapseAll": "Collapse All",
+
+  "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to data@TAMU.",
+
+  "submission.import-external.back-to-my-dspace": "Back to My data@TAMU",
+
+  "error-page.orcid.generic-error": "An error occurred during login via ORCID. Make sure you have shared your ORCID account email address with data@TAMU. If the error persists, contact the administrator",
+
+  "admin.registries.metadata.description": "The metadata registry maintains a list of all metadata fields available in the repository. These fields may be divided amongst multiple schemas. However, data@TAMU requires the qualified Dublin Core schema.",
+
+  "browse.comcol.by.srsc": "By Department",
+
+  "browse.comcol.by.type": "By Type",
+
+  "browse.metadata.type": " Type",
+
+  "browse.metadata.srsc.breadcrumbs": "Browse by Department",
+
+  "browse.metadata.type.breadcrumbs": "Browse by Type",
+
+  "feed.description": "RSS feed",
+
+  "mydspace.title": "My data@TAMU",
+
+  "mydspace.breadcrumbs": "My data@TAMU",
+
+  "nav.browse.header": "All of data@TAMU",
+
+  "nav.mydspace": "My data@TAMU",
+
+  "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items to data@TAMU.",
+}
