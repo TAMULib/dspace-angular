@@ -2,8 +2,7 @@
 
 :root {
   --ds-thumbnail-max-width: 75px;
-  // setting these to none uses the same styles as the links
   --ds-thumbnail-placeholder-background: none;
   --ds-thumbnail-placeholder-border: none;
-  --ds-thumbnail-placeholder-color: none;
+  --ds-thumbnail-placeholder-color: #707070;
 }
