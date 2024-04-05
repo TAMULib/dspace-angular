@@ -15,7 +15,9 @@
   <ds-dso-edit-menu></ds-dso-edit-menu>
 </div>
 <div class="row">
-  <div class="col-xs-12 col-md-4">
+  <!-- TAMU Customization - icon thumbnail style `thumb-font-4` -->
+  <div class="col-xs-12 col-md-4 thumb-font-4">
+  <!-- End TAMU Customization - icon thumbnail style `thumb-font-4` -->
     <ng-container *ngIf="!(mediaViewer.image || mediaViewer.video)">
       <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
         <ds-themed-thumbnail [thumbnail]="object?.thumbnail | async"></ds-themed-thumbnail>
