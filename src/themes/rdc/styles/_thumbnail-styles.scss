@@ -1,0 +1,12 @@
+// Add any thumbnail css for the theme here
+
+.thumbnail-placeholder {
+  @extend .fa;
+  @extend .fa-database;
+}
+
+.thumb-font-3 {
+  .thumbnail-placeholder {
+      font-size: var(--ds-thumbnail-placeholder-font-size);
+  }
+}
