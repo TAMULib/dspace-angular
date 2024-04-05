@@ -5,8 +5,54 @@
   @extend .fa-database;
 }
 
+/* The font sizes used in "no thumbnail" placeholder */
+.thumb-font-0 {
+  .thumbnail-placeholder {
+      @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+          font-size: 0.7rem;
+          padding: 0.2rem;
+      }
+      @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+          font-size: 0.6rem;
+          padding: 0.1rem;
+      }
+      font-size: 0.4rem;
+      padding: 0.1rem;
+  }
+}
+
+.thumb-font-1 {
+  .thumbnail-placeholder {
+      @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+          font-size: 1em;
+          padding: 0.1rem;
+      }
+      @media screen and (max-width: 950px) {
+          font-size: 1em;
+          padding: 0.1rem;
+      }
+      font-size: 1em;
+      padding: 0.125rem;
+  }
+}
+
+.thumb-font-2 {
+  .thumbnail-placeholder {
+      font-size: 2em;
+      padding: 0.125rem;
+  }
+}
+
 .thumb-font-3 {
   .thumbnail-placeholder {
-      font-size: var(--ds-thumbnail-placeholder-font-size);
+      font-size: 3em;
+      padding: 0.5rem;
+  }
+}
+
+.thumb-font-4 {
+  .thumbnail-placeholder {
+      font-size: 4em;
+      padding: 0.5rem;
   }
 }
