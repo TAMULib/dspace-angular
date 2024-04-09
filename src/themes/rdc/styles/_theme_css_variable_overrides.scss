@@ -4,5 +4,8 @@
   --ds-thumbnail-max-width: 75px;
   --ds-thumbnail-placeholder-background: none;
   --ds-thumbnail-placeholder-border: none;
-  --ds-thumbnail-placeholder-color: var(--$gray-700);
+  --ds-thumbnail-placeholder-color: #{--$gray-700};
+
+  --ds-home-news-link-color: #{$gray-100};
+  --ds-home-news-link-hover-color: #{darken($gray-100, 15%)};
 }
