@@ -9,6 +9,8 @@
 
   "menu.section.browse_global_by_type": "By Type",
 
+  "menu.section.browse_global_by_department": "By Department",
+
   "search.form.scope.all": "All of Data@TAMU",
 
   "dso-selector.set-scope.community.button": "Search all of Data@TAMU",
@@ -31,9 +33,15 @@
 
   "browse.comcol.by.type": "By Type",
 
+  "browse.comcol.by.department": "By Department",
+
   "browse.metadata.type": " Type",
 
+  "browse.metadata.department": " Department",
+
   "browse.metadata.type.breadcrumbs": "Browse by Type",
+
+  "browse.metadata.department.breadcrumbs": "Browse by Department",
 
   "feed.description": "RSS feed",
 
