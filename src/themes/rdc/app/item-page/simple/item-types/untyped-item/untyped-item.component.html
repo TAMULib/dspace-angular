@@ -71,6 +71,10 @@
       [fields]="['dc.identifier.uri']"
       [label]="'item.page.uri'">
     </ds-item-page-uri-field>
+    <ds-item-page-uri-field [item]="object"
+      [fields]="['dc.relation.profileurl']"
+      [label]="'item.author.uri'">
+    </ds-item-page-uri-field>
     <ds-item-page-collections [item]="object"></ds-item-page-collections>
     <!-- TAMU Customization - RDC dataset link -->
     <div class="mb-2" *ngIf="object.firstMetadataValue('dcterms.source')">
