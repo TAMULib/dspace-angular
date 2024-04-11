@@ -31,6 +31,8 @@ export class ValueListBrowseDefinition extends NonHierarchicalBrowseDefinition {
   };
 
   getRenderType(): string {
-    return this.dataType;
+    // TAMU Customization - return type.value of `valueList` to properly render author browse by link in simple item view
+    return this.type.value;
+    // return this.dataType;
   }
 }

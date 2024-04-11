@@ -8,6 +8,7 @@ import { ThemeService } from '../../shared/theme-support/theme.service';
 import { FlatBrowseDefinition } from '../../core/shared/flat-browse-definition.model';
 import { ValueListBrowseDefinition } from '../../core/shared/value-list-browse-definition.model';
 import { NonHierarchicalBrowseDefinition } from '../../core/shared/non-hierarchical-browse-definition';
+import { VALUE_LIST_BROWSE_DEFINITION } from 'src/app/core/shared/value-list-browse-definition.resource-type';
 
 describe('BrowseBySwitcherComponent', () => {
   let comp: BrowseBySwitcherComponent;
@@ -72,7 +73,12 @@ describe('BrowseBySwitcherComponent', () => {
     comp = fixture.componentInstance;
   }));
 
-  types.forEach((type: NonHierarchicalBrowseDefinition) => {
+  // TAMU Customization - skip test for ValueListBrowseDefinition
+  types
+    .filter((type: NonHierarchicalBrowseDefinition) => !(type instanceof ValueListBrowseDefinition))
+  // types.forEach((type: NonHierarchicalBrowseDefinition) => {
+  // End TAMU Customization - skip test for ValueListBrowseDefinition
+ .forEach((type: NonHierarchicalBrowseDefinition) => {
     describe(`when switching to a browse-by page for "${type.id}"`, () => {
       beforeEach(() => {
         data.next(createDataWithBrowseDefinition(type));
@@ -84,6 +90,23 @@ describe('BrowseBySwitcherComponent', () => {
       });
     });
   });
+
+  // TAMU Customization - test for ValueListBrowseDefinition
+  types
+    .filter((type: NonHierarchicalBrowseDefinition) => (type instanceof ValueListBrowseDefinition))
+    .forEach((type: ValueListBrowseDefinition) => {
+      describe(`when switching to a browse-by page for "${type.id}"`, () => {
+        beforeEach(() => {
+          data.next(createDataWithBrowseDefinition(type));
+          fixture.detectChanges();
+        });
+
+        it(`should call getComponentByBrowseByType with type "${VALUE_LIST_BROWSE_DEFINITION.value}"`, () => {
+          expect((comp as any).getComponentByBrowseByType).toHaveBeenCalledWith(VALUE_LIST_BROWSE_DEFINITION.value, themeName);
+        });
+      });
+    });
+  // End TAMU Customization - test for ValueListBrowseDefinition
 });
 
 export function createDataWithBrowseDefinition(browseDefinition) {
