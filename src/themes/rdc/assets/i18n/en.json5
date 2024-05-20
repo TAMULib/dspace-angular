@@ -7,6 +7,12 @@
 
   "dataset.listelement.badge": "Dataset",
 
+  "dataset.listelement.no-title": "Untitled",
+
+  "dataset.page.edit": "Edit this dataset",
+
+  "dataset.page.id": "ID",
+
   "dataset.page.titleprefix": "Dataset: ",
 
   "dataset.search.results.head": "Dataset Search Results",
@@ -20,6 +26,12 @@
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.Dataset": "Dataset",
 
   "pdac.listelement.badge": "PDAC",
+
+  "pdac.listelement.no-title": "Untitled",
+
+  "pdac.page.edit": "Edit this PDAC",
+
+  "pdac.page.id": "ID",
 
   "pdac.page.titleprefix": "PDAC: ",
 
