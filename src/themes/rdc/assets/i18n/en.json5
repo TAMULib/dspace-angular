@@ -45,16 +45,16 @@
 
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.PDAC": "PDAC",
 
-  "submission.sections.describe.relationship-lookup.title.isPDACForDataset": "isPDACForDataset",
+  "submission.sections.describe.relationship-lookup.title.isPDACForDataset": "Project Data Access Contacts",
 
-  "submission.sections.describe.relationship-lookup.title.isDatasetAssignedToPDAC": "isDatasetAssignedToPDAC",
+  "submission.sections.describe.relationship-lookup.title.isDatasetAssignedToPDAC": "Datasets",
 
-  "submission.sections.describe.relationship-lookup.selection-tab.title.isPDACForDataset": "isPDACForDataset",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isPDACForDataset": "Project Data Access Contacts",
 
-  "submission.sections.describe.relationship-lookup.selection-tab.title.isDatasetAssignedToPDAC": "isDatasetAssignedToPDAC",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isDatasetAssignedToPDAC": "Datasets",
 
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isPDACForDataset": "isPDACForDataset",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isPDACForDataset": "Project Data Access Contacts",
 
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isDatasetAssignedToPDAC": "isDatasetAssignedToPDAC",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isDatasetAssignedToPDAC": "Datasets",
 
 }
