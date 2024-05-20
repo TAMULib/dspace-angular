@@ -5,7 +5,7 @@
 
   "thumbnail.default.placeholder": "",
 
-  "dataset.listelement.badge": "",
+  "dataset.listelement.badge": "Dataset",
 
-  "pdac.listelement.badge": "",
+  "pdac.listelement.badge": "PDAC",
 }
