@@ -4,4 +4,8 @@
   "item.author.uri": "Researcher Profile",
 
   "thumbnail.default.placeholder": "",
+
+  "dataset.listelement.badge": "",
+
+  "pdac.listelement.badge": "",
 }
