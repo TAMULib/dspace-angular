@@ -7,5 +7,42 @@
 
   "dataset.listelement.badge": "Dataset",
 
+  "dataset.page.titleprefix": "Dataset: ",
+
+  "dataset.search.results.head": "Dataset Search Results",
+
+  "dataset-relationships.search.results.head": "Dataset Search Results",
+
+  "submission.sections.describe.relationship-lookup.title.Dataset": "Dataset",
+
+  "submission.sections.describe.relationship-lookup.selection-tab.title.Dataset": "Dataset",
+
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.Dataset": "Dataset",
+
   "pdac.listelement.badge": "PDAC",
+
+  "pdac.page.titleprefix": "PDAC: ",
+
+  "pdac.search.results.head": "PDAC Search Results",
+
+  "pdac-relationships.search.results.head": "PDAC Search Results",
+
+  "submission.sections.describe.relationship-lookup.title.PDAC": "PDAC",
+
+  "submission.sections.describe.relationship-lookup.selection-tab.title.PDAC": "PDAC",
+
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.PDAC": "PDAC",
+
+  "submission.sections.describe.relationship-lookup.title.isPDACForDataset": "isPDACForDataset",
+
+  "submission.sections.describe.relationship-lookup.title.isDatasetAssignedToPDAC": "isDatasetAssignedToPDAC",
+
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isPDACForDataset": "isPDACForDataset",
+
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isDatasetAssignedToPDAC": "isDatasetAssignedToPDAC",
+
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isPDACForDataset": "isPDACForDataset",
+
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isDatasetAssignedToPDAC": "isDatasetAssignedToPDAC",
+
 }
