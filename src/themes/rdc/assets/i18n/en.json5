@@ -57,8 +57,40 @@
 
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isDatasetAssignedToPDAC": "Research Datasets",
 
-  "search.filters.filter.pdacTitle.head": "PDAC Title",
+  "search.filters.applied.f.pdacName": "PDAC Name",
+  "search.filters.applied.f.pdacUIN": "PDAC UIN",
+  "search.filters.applied.f.pdacTitle": "PDAC Title",
+  "search.filters.applied.f.pdacAffiliation": "PDAC Affiliation",
+  "search.filters.applied.f.pdacTelephone": "PDAC Telephone",
+  "search.filters.applied.f.pdacEmail": "PDAC Email",
+  "search.filters.applied.f.isPDACForDataset": "PDAC for Dataset",
+  "search.filters.applied.f.isDatasetAssignedToPDAC": "Dataset assigned to PDAC",
 
+  "search.filters.filter.pdacName.head": "PDAC Name",
+  "search.filters.filter.pdacUIN.head": "PDAC UIN",
+  "search.filters.filter.pdacTitle.head": "PDAC Title",
   "search.filters.filter.pdacAffiliation.head": "PDAC Affiliation",
+  "search.filters.filter.pdacTelephone.head": "PDAC Telephone",
+  "search.filters.filter.pdacEmail.head": "PDAC Email",
+  "search.filters.filter.isPDACForDataset.head": "PDAC for Dataset",
+  "search.filters.filter.isDatasetAssignedToPDAC.head": "Dataset assigned to PDAC",
+
+  "search.filters.filter.pdacName.placeholder": "PDAC Name",
+  "search.filters.filter.pdacUIN.placeholder": "PDAC UIN",
+  "search.filters.filter.pdacTitle.placeholder": "PDAC Title",
+  "search.filters.filter.pdacAffiliation.placeholder": "PDAC Affiliation",
+  "search.filters.filter.pdacTelephone.placeholder": "PDAC Telephone",
+  "search.filters.filter.pdacEmail.placeholder": "PDAC Email",
+  "search.filters.filter.isPDACForDataset.placeholder": "PDAC for Dataset",
+  "search.filters.filter.isDatasetAssignedToPDAC.placeholder": "Dataset assigned to PDAC",
+
+  "search.filters.filter.pdacName.label": "PDAC Name",
+  "search.filters.filter.pdacUIN.label": "PDAC UIN",
+  "search.filters.filter.pdacTitle.label": "PDAC Title",
+  "search.filters.filter.pdacAffiliation.label": "PDAC Affiliation",
+  "search.filters.filter.pdacTelephone.label": "PDAC Telephone",
+  "search.filters.filter.pdacEmail.label": "PDAC Email",
+  "search.filters.filter.isPDACForDataset.label": "PDAC for Dataset",
+  "search.filters.filter.isDatasetAssignedToPDAC.label": "Dataset assigned to PDAC",
 
 }
