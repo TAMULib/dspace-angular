@@ -54,7 +54,8 @@ export class DSONameService {
     },
     Default: (dso: DSpaceObject): string => {
       // If object doesn't have dc.title metadata use name property
-      return dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
+      // TAMU Customization - only added two or conditions up to dc.title.dataset after that or is core code.
+      return dso.firstMetadataValue('dc.title.project') || dso.firstMetadataValue('dc.title.dataset') || dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
     }
   };
 
