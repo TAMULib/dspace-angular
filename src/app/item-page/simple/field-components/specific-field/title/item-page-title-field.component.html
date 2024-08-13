@@ -7,21 +7,21 @@
 
 <!-- TAMU Customization -title display on Dataset entities for simple item view -->
 <h1 class="item-page-title-field">
-  <div *ngIf="item.firstMetadataValue('dc.title.project') as type" class="d-inline">
+  <div *ngIf="item.firstMetadataValue('dspace.entity.type') as type" class="d-inline">
     {{ type.toLowerCase() + '.page.titleprefix' | translate }}
   </div>
   <span>
-    <ng-container *ngIf="item.firstMetadataValue('dc.title.dataset')">
-      {{ item.firstMetadataValue('dc.title.dataset') }}
-      <ng-container *ngIf="item.firstMetadataValue('dc.title.project')">
-        : Supplement to 
+    <ng-container *ngIf="item.firstMetadataValue('dc.title.dataset') as dataset">
+      {{ dataset }}
+      <ng-container *ngIf="item.firstMetadataValue('dc.title.project') as project">
+        : Supplement to {{ project }}
       </ng-container>
     </ng-container>
-    <ng-container *ngIf="item.firstMetadataValue('dc.title.project') && !item.firstMetadataValue('dc.title.dataset')">
+    <ng-container *ngIf="!item.firstMetadataValue('dc.title.dataset') && item.firstMetadataValue('dc.title.project')">
       {{ item.firstMetadataValue('dc.title.project') }}
     </ng-container>
-    <ng-container *ngIf="item.firstMetadataValue('dc.title.dataset') && !item.firstMetadataValue('dc.title.project')">
-      {{ item.firstMetadataValue('dc.title.dataset') }}
+    <ng-container *ngIf="!item.firstMetadataValue('dc.title.dataset') && !item.firstMetadataValue('dc.title.project')">
+      {{ item.firstMetadataValue('dspace.entity.type') }}
     </ng-container>
   </span>
 </h1>
