@@ -1,6 +1,15 @@
-<h1 class="item-page-title-field">
+<!-- <h1 class="item-page-title-field">
   <div *ngIf="item.firstMetadataValue('dspace.entity.type') as type" class="d-inline">
     {{ type.toLowerCase() + '.page.titleprefix' | translate }}
   </div>
   <span class="dont-break-out">{{ dsoNameService.getName(item) }}</span>
+</h1> -->
+
+<!-- TAMU Customization -title display on Dataset entities for simple item view -->
+<h1 class="item-page-title-field">
+  <div *ngIf="item.firstMetadataValue('dc.title.project') as type" class="d-inline">
+    {{ type.toLowerCase() + '.page.titleprefix' | translate }}
+  </div>
+  <span {{ dsoNameService.getName(item) }}: Supplement to {{ item.firstMetadataValue('dc.title.project') }}</span>
 </h1>
+<!-- END TAMU Customization -title display on Dataset entities for simple item view -->
