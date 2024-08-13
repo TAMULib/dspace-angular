@@ -10,6 +10,19 @@
   <div *ngIf="item.firstMetadataValue('dc.title.project') as type" class="d-inline">
     {{ type.toLowerCase() + '.page.titleprefix' | translate }}
   </div>
-  <span {{ dsoNameService.getName(item) }}: Supplement to {{ item.firstMetadataValue('dc.title.project') }}</span>
+  <span>
+    <ng-container *ngIf="item.firstMetadataValue('dc.title.dataset')">
+      {{ item.firstMetadataValue('dc.title.dataset') }}
+      <ng-container *ngIf="item.firstMetadataValue('dc.title.project')">
+        : Supplement to 
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="item.firstMetadataValue('dc.title.project') && !item.firstMetadataValue('dc.title.dataset')">
+      {{ item.firstMetadataValue('dc.title.project') }}
+    </ng-container>
+    <ng-container *ngIf="item.firstMetadataValue('dc.title.dataset') && !item.firstMetadataValue('dc.title.project')">
+      {{ item.firstMetadataValue('dc.title.dataset') }}
+    </ng-container>
+  </span>
 </h1>
 <!-- END TAMU Customization -title display on Dataset entities for simple item view -->
