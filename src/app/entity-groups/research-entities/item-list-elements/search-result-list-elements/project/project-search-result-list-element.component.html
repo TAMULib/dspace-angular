@@ -23,7 +23,7 @@
       <a *ngIf="linkType != linkTypes.None" [target]="(linkType == linkTypes.ExternalLink) ? '_blank' : '_self'"
          [attr.rel]="(linkType == linkTypes.ExternalLink) ? 'noopener noreferrer' : null"
          [routerLink]="[itemPageRoute]" class="lead item-list-title dont-break-out"
-         [innerHTML]="Hello2"></a>
+         [innerHTML]="dsoTitle"></a>
       <span *ngIf="linkType == linkTypes.None"
             class="lead item-list-title dont-break-out"
             [innerHTML]="dsoTitle"></span>
