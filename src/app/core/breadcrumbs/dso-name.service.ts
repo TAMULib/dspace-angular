@@ -54,7 +54,7 @@ export class DSONameService {
     },
     Default: (dso: DSpaceObject): string => {
       // If object doesn't have dc.title metadata use name property
-      // TAMU Customization - only added two or conditions up to dc.title.dataset after that or is core code.
+      // TAMU Customization - only added two or conditions up to dc.title.dataset after the || is core code.
       return dso.firstMetadataValue('dc.title.project') || dso.firstMetadataValue('dc.title.dataset') || dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
     }
   };
@@ -109,7 +109,8 @@ export class DSONameService {
     } else if (entityType === 'OrgUnit') {
       return this.firstMetadataValue(object, dso, 'organization.legalName') || this.translateService.instant('dso.name.untitled');
     }
-    return this.firstMetadataValue(object, dso, 'dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
+    // TAMU Customization - only added two || conditions up to dc.title.dataset after the || is core code.(dso.name and || this.translateService.instant('dso.name.untitled') )
+    return this.firstMetadataValue(object, dso, 'dc.title.project') || dso.firstMetadataValue('dc.title.dataset') || dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
   }
 
   /**
