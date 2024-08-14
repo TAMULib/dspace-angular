@@ -106,9 +106,9 @@ export class DSONameService {
         return familyName || givenName;
       }
       return `${familyName}, ${givenName}`;
-    } else if (entityType === 'OrgUnit') {
+    } else if (entityType === 'Dataset') {
       // return this.firstMetadataValue(object, dso, 'organization.legalName') || this.translateService.instant('dso.name.untitled');
-      return this.firstMetadataValue(object, dso, 'dc.title.dataset') || this.translateService.instant('dso.name.untitled');
+      return this.firstMetadataValue(object, dso, 'dc.title.dataset') || dso.firstMetadataValue('dc.title.dataset') || this.translateService.instant('dso.name.untitled');
     }
     // TAMU Customization - only added two || conditions up to dc.title.dataset after the || is core code.(dso.name and || this.translateService.instant('dso.name.untitled') )
     return this.firstMetadataValue(object, dso, 'dc.title.project') || dso.firstMetadataValue('dc.title.dataset') || dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
