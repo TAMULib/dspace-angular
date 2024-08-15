@@ -96,7 +96,7 @@ export class DSONameService {
     const types = dso.getRenderTypes();
     const entityType = types
       .filter((type) => typeof type === 'string')
-      .find((type: string) => (['Person', 'OrgUnit']).includes(type)) as string;
+      .find((type: string) => (['Person', 'Dataset']).includes(type)) as string;
     if (entityType === 'Person') {
       const familyName = this.firstMetadataValue(object, dso, 'person.familyName');
       const givenName = this.firstMetadataValue(object, dso, 'person.givenName');
