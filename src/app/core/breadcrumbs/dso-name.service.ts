@@ -106,9 +106,22 @@ export class DSONameService {
         return familyName || givenName;
       }
       return `${familyName}, ${givenName}`;
+      // TAMU Customization - swithched the entitiy to look for DATASET in stead of orgUnit
     } else if (entityType === 'Dataset') {
-      // return this.firstMetadataValue(object, dso, 'organization.legalName') || this.translateService.instant('dso.name.untitled');
-      return this.firstMetadataValue(object, dso, 'dc.title.dataset') || dso.firstMetadataValue('dc.title.dataset') || this.translateService.instant('dso.name.untitled');
+      // return this.firstMetadataValue(object, dso, 'organization.legalName') || this.translateService.instant('dso.name.untitled'); <- the core code
+      //Tamu Customization - Item list view
+      const datasetTitle = this.firstMetadataValue(object, dso, 'dc.title.dataset');
+      const projectTitle = dso.firstMetadataValue('dc.title.project');
+
+        if (datasetTitle && projectTitle) {
+          return `${datasetTitle}: Supplement to ${projectTitle}`;
+      } else if (datasetTitle) {
+          return datasetTitle;
+      } else if (projectTitle) {
+          return projectTitle;
+      } else {
+          return this.translateService.instant('dso.name.untitled');
+      }
     }
     // TAMU Customization - only added two || conditions up to dc.title.dataset after the || is core code.(dso.name and || this.translateService.instant('dso.name.untitled') )
     return this.firstMetadataValue(object, dso, 'dc.title.project') || dso.firstMetadataValue('dc.title.dataset') || dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
