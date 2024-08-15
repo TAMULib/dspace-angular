@@ -109,7 +109,7 @@ export class DSONameService {
       // TAMU Customization - swithched the entitiy to look for DATASET in stead of orgUnit
     } else if (entityType === 'Dataset') {
       // return this.firstMetadataValue(object, dso, 'organization.legalName') || this.translateService.instant('dso.name.untitled'); <- the core code
-      //Tamu Customization - Item list view
+      //Tamu Customization - Item list view to show Dimension tile and Project long Title. It will default to one or the other if only one exists.
       const datasetTitle = this.firstMetadataValue(object, dso, 'dc.title.dataset');
       const projectTitle = dso.firstMetadataValue('dc.title.project');
 
