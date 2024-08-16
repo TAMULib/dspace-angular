@@ -113,7 +113,7 @@ export class DSONameService {
       const datasetTitle = this.firstMetadataValue(object, dso, 'dc.title.dataset');
       const projectTitle = dso.firstMetadataValue('dc.title.project');
 
-        if (datasetTitle && projectTitle) {
+      if (datasetTitle && projectTitle) {
           return `${datasetTitle}: Supplement to ${projectTitle}`;
       } else if (datasetTitle) {
           return datasetTitle;
