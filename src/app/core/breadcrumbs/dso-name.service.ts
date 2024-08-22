@@ -96,6 +96,7 @@ export class DSONameService {
     const types = dso.getRenderTypes();
     const entityType = types
       .filter((type) => typeof type === 'string')
+      // TAMU Customization - added 'Dataset' after 'Person'
       .find((type: string) => (['Person', 'Dataset']).includes(type)) as string;
     if (entityType === 'Person') {
       const familyName = this.firstMetadataValue(object, dso, 'person.familyName');
@@ -106,10 +107,10 @@ export class DSONameService {
         return familyName || givenName;
       }
       return `${familyName}, ${givenName}`;
-      // TAMU Customization - swithched the entitiy to look for DATASET in stead of orgUnit
+      // TAMU Customization - switched the entity type to look for DATASET instead of orgUnit
     } else if (entityType === 'Dataset') {
       // return this.firstMetadataValue(object, dso, 'organization.legalName') || this.translateService.instant('dso.name.untitled'); <- the core code
-      //Tamu Customization - Item list view to show Dimension tile and Project long Title. It will default to one or the other if only one exists.
+      // TAMU Customization - Item list view to show Dimension tile and Project long Title. It will default to one or the other if only one exists.
       const datasetTitle = dso.firstMetadataValue('dc.title.dataset');
       const projectTitle = dso.firstMetadataValue('dc.title.project');
 
@@ -122,6 +123,7 @@ export class DSONameService {
       } else {
           return this.translateService.instant('dso.name.untitled');
       }
+      // END TAMU Customization - Item list view to show Dimension tile and Project long Title. It will default to one or the other if only one exists.
     }
     // TAMU Customization - only added two || conditions up to dc.title.dataset after the || is core code.(dso.name and || this.translateService.instant('dso.name.untitled') )
     return this.firstMetadataValue(object, dso, 'dc.title.project') || dso.firstMetadataValue('dc.title.dataset') || dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
