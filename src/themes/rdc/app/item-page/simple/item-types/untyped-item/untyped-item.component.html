@@ -34,6 +34,14 @@
       [metadataFields]="['dc.contributor.author', 'dc.creator']"
       [label]="'relationships.isAuthorOf' | translate">
     </ds-themed-metadata-representation-list>
+    <!-- TAMU Customization -Test PI and Co PI -->
+    <ds-themed-metadata-representation-list class="ds-item-page-mixed-author-field"
+      [parentItem]="object"
+      [itemType]="'Person'"
+      [metadataFields]="['dc.creator.pi', 'dc.creator.copi']"
+      [label]="'relationships.isAuthorOf' | translate">
+    </ds-themed-metadata-representation-list>
+     <!-- TAMU Customization -Test PI and Co PI -->
     <ds-generic-item-page-field [item]="object"
       [fields]="['journal.title']"
       [label]="'item.page.journal-title'">
