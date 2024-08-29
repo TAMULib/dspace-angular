@@ -38,8 +38,16 @@
     <ds-themed-metadata-representation-list class="ds-item-page-mixed-author-field"
       [parentItem]="object"
       [itemType]="'Person'"
-      [metadataFields]="['dc.creator.pi', 'dc.creator.copi']"
-      [label]="'relationships.isAuthorOf' | translate">
+      [metadataFields]="['dc.creator.pi']"
+      [label]="'Principal Investigator'">
+    </ds-themed-metadata-representation-list>
+     <!-- TAMU Customization -Test PI and Co PI -->
+    <!-- TAMU Customization -Test PI and Co PI -->
+    <ds-themed-metadata-representation-list class="ds-item-page-mixed-author-field"
+      [parentItem]="object"
+      [itemType]="'Person'"
+      [metadataFields]="['dc.creator.copi']"
+      [label]="'Co-Principal Investigator'">
     </ds-themed-metadata-representation-list>
      <!-- TAMU Customization -Test PI and Co PI -->
     <ds-generic-item-page-field [item]="object"
