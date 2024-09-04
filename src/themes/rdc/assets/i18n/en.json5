@@ -23,6 +23,8 @@
 
   "researchproject.page.titleprefix": "Research Project:",
 
+  "researchproject.page.edit": "Edit this Research Project",
+
   "submission.sections.describe.relationship-lookup.title.Dataset": "Dataset",
 
   "submission.sections.describe.relationship-lookup.selection-tab.title.Dataset": "Dataset",
