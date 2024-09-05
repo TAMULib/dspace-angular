@@ -37,4 +37,12 @@ export class MetadataUriValuesComponent extends MetadataValuesComponent {
    * The label for this iteration of metadata values
    */
   @Input() label: string;
+
+  // From upstream DSpace 7 https://github.com/DSpace/dspace-angular/pull/2866/files
+  /**
+   * The target attribute for the metadata links.
+   * Defaults to '_blank' to open links in a new window/tab.
+   */
+  @Input() linkTarget = '_blank';
+  // END of upstream additions
 }
