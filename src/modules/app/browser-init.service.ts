@@ -33,6 +33,9 @@ import { MenuService } from '../../app/shared/menu/menu.service';
 import { RootDataService } from '../../app/core/data/root-data.service';
 import { firstValueFrom, Subscription } from 'rxjs';
 import { ServerCheckGuard } from '../../app/core/server-check/server-check.guard';
+// Fix Shibb Auth refresh-Cherry picked from Upstream https://github.com/DSpace/dspace-angular/pull/3011/files
+import { RequestService } from 'src/app/core/data/request.service';
+import { HALEndpointService } from 'src/app/core/shared/hal-endpoint.service';
 
 /**
  * Performs client-side initialization.
@@ -59,6 +62,9 @@ export class BrowserInitService extends InitService {
     protected menuService: MenuService,
     private rootDataService: RootDataService,
     protected serverCheckGuard: ServerCheckGuard,
+    // Fix Shibb Auth refresh-Cherry picked from Upstream https://github.com/DSpace/dspace-angular/pull/3011/files
+    private requestService: RequestService,
+    private halService: HALEndpointService,
   ) {
     super(
       store,
@@ -145,17 +151,17 @@ export class BrowserInitService extends InitService {
   }
 
   /**
-   * During an external authentication flow invalidate the SSR transferState
+   * Fix Shibb Auth refresh-Cherry picked from Upstream https://github.com/DSpace/dspace-angular/pull/3011/files
+   * During an external authentication flow invalidate the
    * data in the cache. This allows the app to fetch fresh content.
    * @private
    */
   private externalAuthCheck() {
-
     this.sub = this.authService.isExternalAuthentication().pipe(
         filter((externalAuth: boolean) => externalAuth)
       ).subscribe(() => {
-        // Clear the transferState data.
-        this.rootDataService.invalidateRootCache();
+        // Fix Shibb Auth refresh-Cherry picked from Upstream https://github.com/DSpace/dspace-angular/pull/3011/files
+        this.requestService.setStaleByHrefSubstring(this.halService.getRootHref());
         this.authService.setExternalAuthStatus(false);
       }
     );
