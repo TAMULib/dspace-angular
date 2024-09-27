@@ -95,6 +95,7 @@ describe('BaseDataService', () => {
     remoteDataMocks = {
       RequestPending: new RemoteData(undefined, msToLive, timeStamp, RequestEntryState.RequestPending, undefined, undefined, undefined),
       ResponsePending: new RemoteData(undefined, msToLive, timeStamp, RequestEntryState.ResponsePending, undefined, undefined, undefined),
+      ResponsePendingStale: new RemoteData(undefined, msToLive, timeStamp, RequestEntryState.ResponsePendingStale, undefined, undefined, undefined), // Bug fix from upstream-https://github.com/DSpace/dspace-angular/pull/2731/files
       Success: new RemoteData(timeStamp, msToLive, timeStamp, RequestEntryState.Success, undefined, payload, statusCodeSuccess),
       SuccessStale: new RemoteData(timeStamp, msToLive, timeStamp, RequestEntryState.SuccessStale, undefined, payload, statusCodeSuccess),
       Error: new RemoteData(timeStamp, msToLive, timeStamp, RequestEntryState.Error, errorMessage, undefined, statusCodeError),
@@ -303,21 +304,24 @@ describe('BaseDataService', () => {
 
       it(`should not emit a cached stale RemoteData, but only start emitting after the state first changes to RequestPending`, () => {
         testScheduler.run(({ cold, expectObservable }) => {
-          spyOn(rdbService, 'buildSingle').and.returnValue(cold('a-b-c-d-e', {
-            a: remoteDataMocks.SuccessStale,
-            b: remoteDataMocks.RequestPending,
-            c: remoteDataMocks.ResponsePending,
-            d: remoteDataMocks.Success,
-            e: remoteDataMocks.SuccessStale,
+          // Bug fix from upstream https://github.com/DSpace/dspace-angular/pull/2731/files
+          spyOn(rdbService, 'buildSingle').and.returnValue(cold('a-b-c-d-e-f-g', {
+            a: remoteDataMocks.ResponsePendingStale,
+            b: remoteDataMocks.SuccessStale,
+            c: remoteDataMocks.ErrorStale,
+            d: remoteDataMocks.RequestPending,
+            e: remoteDataMocks.ResponsePending,
+            f: remoteDataMocks.Success,
+            g: remoteDataMocks.SuccessStale,
           }));
-          const expected = '--b-c-d-e';
+          const expected = '------d-e-f-g';
           const values = {
-            b: remoteDataMocks.RequestPending,
-            c: remoteDataMocks.ResponsePending,
-            d: remoteDataMocks.Success,
-            e: remoteDataMocks.SuccessStale,
+            d: remoteDataMocks.RequestPending,
+            e: remoteDataMocks.ResponsePending,
+            f: remoteDataMocks.Success,
+            g: remoteDataMocks.SuccessStale,
           };
-
+          // END Bug fix from upstream https://github.com/DSpace/dspace-angular/pull/2731/files
           expectObservable(service.findByHref(selfLink, true, true, ...linksToFollow)).toBe(expected, values);
         });
       });
@@ -354,21 +358,24 @@ describe('BaseDataService', () => {
 
       it(`should not emit a cached stale RemoteData, but only start emitting after the state first changes to RequestPending`, () => {
         testScheduler.run(({ cold, expectObservable }) => {
-          spyOn(rdbService, 'buildSingle').and.returnValue(cold('a-b-c-d-e', {
-            a: remoteDataMocks.SuccessStale,
-            b: remoteDataMocks.RequestPending,
-            c: remoteDataMocks.ResponsePending,
-            d: remoteDataMocks.Success,
-            e: remoteDataMocks.SuccessStale,
+          // Bug fix from upstream https://github.com/DSpace/dspace-angular/pull/2731/files
+          spyOn(rdbService, 'buildSingle').and.returnValue(cold('a-b-c-d-e-f-g', {
+            a: remoteDataMocks.ResponsePendingStale,
+            b: remoteDataMocks.SuccessStale,
+            c: remoteDataMocks.ErrorStale,
+            d: remoteDataMocks.RequestPending,
+            e: remoteDataMocks.ResponsePending,
+            f: remoteDataMocks.Success,
+            g: remoteDataMocks.SuccessStale,
           }));
-          const expected = '--b-c-d-e';
+          const expected = '------d-e-f-g';
           const values = {
-            b: remoteDataMocks.RequestPending,
-            c: remoteDataMocks.ResponsePending,
-            d: remoteDataMocks.Success,
-            e: remoteDataMocks.SuccessStale,
+            d: remoteDataMocks.RequestPending,
+            e: remoteDataMocks.ResponsePending,
+            f: remoteDataMocks.Success,
+            g: remoteDataMocks.SuccessStale,
           };
-
+          // END Bug fix from upstream https://github.com/DSpace/dspace-angular/pull/2731/files
           expectObservable(service.findByHref(selfLink, false, true, ...linksToFollow)).toBe(expected, values);
         });
       });
@@ -487,21 +494,24 @@ describe('BaseDataService', () => {
 
       it(`should not emit a cached stale RemoteData, but only start emitting after the state first changes to RequestPending`, () => {
         testScheduler.run(({ cold, expectObservable }) => {
-          spyOn(rdbService, 'buildList').and.returnValue(cold('a-b-c-d-e', {
-            a: remoteDataMocks.SuccessStale,
-            b: remoteDataMocks.RequestPending,
-            c: remoteDataMocks.ResponsePending,
-            d: remoteDataMocks.Success,
-            e: remoteDataMocks.SuccessStale,
+          // Bug fix from upstream https://github.com/DSpace/dspace-angular/pull/2731/files
+          spyOn(rdbService, 'buildList').and.returnValue(cold('a-b-c-d-e-f-g', {
+            a: remoteDataMocks.ResponsePendingStale,
+            b: remoteDataMocks.SuccessStale,
+            c: remoteDataMocks.ErrorStale,
+            d: remoteDataMocks.RequestPending,
+            e: remoteDataMocks.ResponsePending,
+            f: remoteDataMocks.Success,
+            g: remoteDataMocks.SuccessStale,
           }));
-          const expected = '--b-c-d-e';
+          const expected = '------d-e-f-g';
           const values = {
-            b: remoteDataMocks.RequestPending,
-            c: remoteDataMocks.ResponsePending,
-            d: remoteDataMocks.Success,
-            e: remoteDataMocks.SuccessStale,
+            d: remoteDataMocks.RequestPending,
+            e: remoteDataMocks.ResponsePending,
+            f: remoteDataMocks.Success,
+            g: remoteDataMocks.SuccessStale,
           };
-
+          // END Bug fix from upstream https://github.com/DSpace/dspace-angular/pull/2731/files
           expectObservable(service.findListByHref(selfLink, findListOptions, true, true, ...linksToFollow)).toBe(expected, values);
         });
       });
@@ -538,21 +548,24 @@ describe('BaseDataService', () => {
 
       it(`should not emit a cached stale RemoteData, but only start emitting after the state first changes to RequestPending`, () => {
         testScheduler.run(({ cold, expectObservable }) => {
-          spyOn(rdbService, 'buildList').and.returnValue(cold('a-b-c-d-e', {
-            a: remoteDataMocks.SuccessStale,
-            b: remoteDataMocks.RequestPending,
-            c: remoteDataMocks.ResponsePending,
-            d: remoteDataMocks.Success,
-            e: remoteDataMocks.SuccessStale,
+          // Bug fix from upstream https://github.com/DSpace/dspace-angular/pull/2731/files
+          spyOn(rdbService, 'buildList').and.returnValue(cold('a-b-c-d-e-f-g', {
+            a: remoteDataMocks.ResponsePendingStale,
+            b: remoteDataMocks.SuccessStale,
+            c: remoteDataMocks.ErrorStale,
+            d: remoteDataMocks.RequestPending,
+            e: remoteDataMocks.ResponsePending,
+            f: remoteDataMocks.Success,
+            g: remoteDataMocks.SuccessStale,
           }));
-          const expected = '--b-c-d-e';
+          const expected = '------d-e-f-g';
           const values = {
-            b: remoteDataMocks.RequestPending,
-            c: remoteDataMocks.ResponsePending,
-            d: remoteDataMocks.Success,
-            e: remoteDataMocks.SuccessStale,
+            d: remoteDataMocks.RequestPending,
+            e: remoteDataMocks.ResponsePending,
+            f: remoteDataMocks.Success,
+            g: remoteDataMocks.SuccessStale,
           };
-
+          // END Bug fix from upstream https://github.com/DSpace/dspace-angular/pull/2731/files
           expectObservable(service.findListByHref(selfLink, findListOptions, false, true, ...linksToFollow)).toBe(expected, values);
         });
       });
