@@ -35,7 +35,7 @@ export class RdcDSONameService extends DSONameService {
   }
 
   private isDataset(dso: DSpaceObject): boolean {
-    return dso.getRenderTypes()
+    return dso && dso.getRenderTypes()
       .filter((type) => typeof type === 'string')
       .some((type: string) => 'Dataset' === type);
   }
