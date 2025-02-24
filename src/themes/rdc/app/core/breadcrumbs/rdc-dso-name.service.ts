@@ -34,8 +34,20 @@ export class RdcDSONameService extends DSONameService {
     return super.getName(dso);
   }
 
+  getHitHighlights(object: any, dso: DSpaceObject): string {
+    if (this.isDataset(dso)) {
+      const dataset = dso.firstMetadataValue('dc.title.dataset');
+
+      if (isNotEmpty(dataset)) {
+        return dataset;
+      }
+    }
+
+    return super.getHitHighlights(object, dso);
+  }
+
   private isDataset(dso: DSpaceObject): boolean {
-    return dso && dso.getRenderTypes()
+    return dso?.getRenderTypes()
       .filter((type) => typeof type === 'string')
       .some((type: string) => 'Dataset' === type);
   }
