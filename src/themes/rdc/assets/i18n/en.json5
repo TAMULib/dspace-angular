@@ -13,7 +13,7 @@
 
   "dataset.page.id": "ID",
 
-  "dataset.page.titleprefix": "Dataset: ",
+  "dataset.page.titleprefix": "",
 
   "dataset.search.results.head": "Dataset Search Results",
 
