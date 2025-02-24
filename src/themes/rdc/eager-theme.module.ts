@@ -10,6 +10,7 @@ import { ResultsBackButtonModule } from '../../app/shared/results-back-button/re
 import { SharedModule } from '../../app/shared/shared.module';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import { ItemPageTitleFieldComponent } from './app/item-page/simple/field-components/specific-field/title/item-page-title-field.component';
+import { ItemSearchResultListElementComponent } from './app/shared/object-list/search-result-list-element/item-search-result/item-types/item/item-search-result-list-element.component';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -17,6 +18,7 @@ import { ItemPageTitleFieldComponent } from './app/item-page/simple/field-compon
  */
 const ENTRY_COMPONENTS = [
   ItemPageTitleFieldComponent,
+  ItemSearchResultListElementComponent,
   UntypedItemComponent
 ];
 
