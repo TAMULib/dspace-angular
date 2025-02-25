@@ -19,7 +19,7 @@ export class RdcDSONameService extends DSONameService {
 
   getName(dso: DSpaceObject | undefined): string {
     if (this.isDataset(dso)) {
-      const dataset = dso.firstMetadataValue('dc.title.dataset');
+      const dataset = dso.firstMetadataValue('dc.title');
       const project = dso.firstMetadataValue('dc.title.project');
 
       if (isNotEmpty(dataset) && isNotEmpty(project)) {
@@ -36,7 +36,7 @@ export class RdcDSONameService extends DSONameService {
 
   getHitHighlights(object: any, dso: DSpaceObject): string {
     if (this.isDataset(dso)) {
-      const dataset = dso.firstMetadataValue('dc.title.dataset');
+      const dataset = dso.firstMetadataValue('dc.title');
 
       if (isNotEmpty(dataset)) {
         return dataset;
