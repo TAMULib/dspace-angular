@@ -99,4 +99,9 @@
   "search.filters.filter.isPDACForDataset.label": "PDAC for Dataset",
   "search.filters.filter.isDatasetAssignedToPDAC.label": "Dataset assigned to PDAC",
 
+  "search.filters.applied.f.sponsor": "Funding Agency",
+  "search.filters.filter.sponsor.head": "Funding Agency",
+  "search.filters.filter.sponsor.placeholder": "Funding Agency",
+  "search.filters.filter.sponsor.label": "Funding Agency",
+
 }
