@@ -99,4 +99,11 @@
   "search.filters.filter.isPDACForDataset.label": "PDAC for Dataset",
   "search.filters.filter.isDatasetAssignedToPDAC.label": "Dataset assigned to PDAC",
 
+  "menu.section.browse_global_by_awardNumber": "By Award Number",
+
+  "browse.comcol.by.awardNumber": "By Award Number",
+
+  "browse.metadata.awardNumber": " Award Number",
+  "browse.metadata.awardNumber.breadcrumbs": "Browse by Award Number",
+
 }
