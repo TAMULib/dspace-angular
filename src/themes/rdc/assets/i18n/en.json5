@@ -106,4 +106,11 @@
   "browse.metadata.awardNumber": " Award Number",
   "browse.metadata.awardNumber.breadcrumbs": "Browse by Award Number",
 
+  "menu.section.browse_global_by_fundingAgency": "By Funding Agency",
+
+  "browse.comcol.by.fundingAgency": "By Funding Agency",
+
+  "browse.metadata.fundingAgency": " Funding Agency",
+  "browse.metadata.fundingAgency.breadcrumbs": "Browse by Funding Agency",
+
 }
