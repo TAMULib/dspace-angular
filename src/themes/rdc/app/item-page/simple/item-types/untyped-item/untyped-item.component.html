@@ -68,7 +68,7 @@
     </ds-generic-item-page-field>
   </div>
   <div class="col-xs-12 col-md-6">
-    <ds-item-page-abstract-field [item]="object"></ds-item-page-abstract-field>
+    <rdc-ds-item-page-abstract-field [item]="object" [label]="getAbstractLabel(object)"></rdc-ds-item-page-abstract-field>
     <ds-generic-item-page-field [item]="object"
       [fields]="['dc.description']"
       [label]="'item.page.description'">
