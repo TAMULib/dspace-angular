@@ -39,7 +39,7 @@ export class ComcolPageBrowseByComponent extends BaseComponent {
 
   readonly browseByMap = {
     'All': [dateissued, author, title, subject, department, fundingAgency, awardNumber, type],
-    'Dataset': [dateissued, author, title, subject, department],
+    'Dataset': [dateissued, author, title, subject],
     'PDAC': [dateissued, department, name],
     'ResearchProject': [dateissued, author, title, subject, department, fundingAgency, awardNumber],
   };
