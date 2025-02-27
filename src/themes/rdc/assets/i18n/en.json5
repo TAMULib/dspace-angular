@@ -115,4 +115,9 @@
   "browse.metadata.fundingAgency": " Funding Agency",
   "browse.metadata.fundingAgency.breadcrumbs": "Browse by Funding Agency",
 
+  "search.filters.applied.f.sponsor": "Funding Agency",
+  "search.filters.filter.sponsor.head": "Funding Agency",
+  "search.filters.filter.sponsor.placeholder": "Funding Agency",
+  "search.filters.filter.sponsor.label": "Funding Agency",
+
 }
