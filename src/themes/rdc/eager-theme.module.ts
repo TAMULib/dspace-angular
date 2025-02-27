@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { DSONameService } from '../../app/core/breadcrumbs/dso-name.service';
 import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { ItemSharedModule } from '../../app/item-page/item-shared.module';
 import { NavbarModule } from '../../app/navbar/navbar.module';
@@ -8,6 +9,7 @@ import { SharedBrowseByModule } from '../../app/shared/browse-by/shared-browse-b
 import { DsoPageModule } from '../../app/shared/dso-page/dso-page.module';
 import { ResultsBackButtonModule } from '../../app/shared/results-back-button/results-back-button.module';
 import { SharedModule } from '../../app/shared/shared.module';
+import { RdcDSONameService } from './app/core/breadcrumbs/rdc-dso-name.service';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 
 /**
@@ -36,7 +38,8 @@ const DECLARATIONS = [
   ],
   declarations: DECLARATIONS,
   providers: [
-    ...ENTRY_COMPONENTS.map((component) => ({ provide: component }))
+    ...ENTRY_COMPONENTS.map((component) => ({ provide: component })),
+    { provide: DSONameService, useClass: RdcDSONameService }
   ],
 })
 /**
