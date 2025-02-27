@@ -13,9 +13,11 @@
 
   "dataset.page.id": "ID",
 
-  "dataset.page.titleprefix": "Dataset: ",
+  "dataset.page.titleprefix": "",
 
   "dataset.search.results.head": "Dataset Search Results",
+
+  "dataset.supplement.to": "{{ dataset }}: Supplement to {{ project }}",
 
   "dataset-relationships.search.results.head": "Dataset Search Results",
 
