@@ -68,12 +68,13 @@
     </ds-generic-item-page-field>
   </div>
   <div class="col-xs-12 col-md-6">
+
     <!-- TAMU Customization - Expand/collapse abstract -->
     <!-- <ds-item-page-abstract-field [item]="object"></ds-item-page-abstract-field> -->
     <div class="truncate-container clearfix">
       <div class="content-wrapper" [ngClass]="{ 'expanded': expanded }">
         <div class="content">
-          <ds-item-page-abstract-field [item]="object"></ds-item-page-abstract-field>
+          <rdc-ds-item-page-abstract-field [item]="object" [label]="getAbstractLabel(object)"></rdc-ds-item-page-abstract-field>
         </div>
         <div class="fade-out" *ngIf="!expanded"></div>
       </div>

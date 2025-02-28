@@ -10,6 +10,7 @@ import { DsoPageModule } from '../../app/shared/dso-page/dso-page.module';
 import { ResultsBackButtonModule } from '../../app/shared/results-back-button/results-back-button.module';
 import { SharedModule } from '../../app/shared/shared.module';
 import { RdcDSONameService } from './app/core/breadcrumbs/rdc-dso-name.service';
+import { RdcItemPageAbstractFieldComponent } from './app/item-page/simple/field-components/specific-field/abstract/rdc-item-page-abstract-field.component';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 
 /**
@@ -17,6 +18,7 @@ import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-
  * This will ensure that decorator gets picked up when the app loads
  */
 const ENTRY_COMPONENTS = [
+  RdcItemPageAbstractFieldComponent,
   UntypedItemComponent
 ];
 
