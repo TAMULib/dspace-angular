@@ -1,4 +1,6 @@
 {
+  "item.page.abstract-or-project-summary": "Abstract or Project Summary",
+
   "item.page.source": "Access at repository",
 
   "item.author.uri": "Researcher Profile",
@@ -13,9 +15,11 @@
 
   "dataset.page.id": "ID",
 
-  "dataset.page.titleprefix": "Dataset: ",
+  "dataset.page.titleprefix": "",
 
   "dataset.search.results.head": "Dataset Search Results",
+
+  "dataset.supplement.to": "{{ dataset }}: Supplement to {{ project }}",
 
   "dataset-relationships.search.results.head": "Dataset Search Results",
 
@@ -110,5 +114,24 @@
   "search.filters.filter.name.head": "Name",
   "search.filters.filter.name.placeholder": "Name",
   "search.filters.filter.name.label": "Name",
+
+  "menu.section.browse_global_by_awardNumber": "By Award Number",
+
+  "browse.comcol.by.awardNumber": "By Award Number",
+
+  "browse.metadata.awardNumber": " Award Number",
+  "browse.metadata.awardNumber.breadcrumbs": "Browse by Award Number",
+
+  "menu.section.browse_global_by_fundingAgency": "By Funding Agency",
+
+  "browse.comcol.by.fundingAgency": "By Funding Agency",
+
+  "browse.metadata.fundingAgency": " Funding Agency",
+  "browse.metadata.fundingAgency.breadcrumbs": "Browse by Funding Agency",
+
+  "search.filters.applied.f.sponsor": "Funding Agency",
+  "search.filters.filter.sponsor.head": "Funding Agency",
+  "search.filters.filter.sponsor.placeholder": "Funding Agency",
+  "search.filters.filter.sponsor.label": "Funding Agency",
 
 }
