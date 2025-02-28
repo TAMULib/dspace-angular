@@ -54,8 +54,7 @@ export class DSONameService {
     },
     Default: (dso: DSpaceObject): string => {
       // If object doesn't have dc.title metadata use name property
-      // TAMU Customization - only added two or conditions up to dc.title.dataset after the || is core code.
-      return dso.firstMetadataValue('dc.title.project') || dso.firstMetadataValue('dc.title.dataset') || dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
+      return dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
     }
   };
 
@@ -96,8 +95,7 @@ export class DSONameService {
     const types = dso.getRenderTypes();
     const entityType = types
       .filter((type) => typeof type === 'string')
-      // TAMU Customization - added 'Dataset' after 'Person'
-      .find((type: string) => (['Person', 'Dataset']).includes(type)) as string;
+      .find((type: string) => (['Person', 'OrgUnit']).includes(type)) as string;
     if (entityType === 'Person') {
       const familyName = this.firstMetadataValue(object, dso, 'person.familyName');
       const givenName = this.firstMetadataValue(object, dso, 'person.givenName');
@@ -107,26 +105,10 @@ export class DSONameService {
         return familyName || givenName;
       }
       return `${familyName}, ${givenName}`;
-      // TAMU Customization - switched the entity type to look for DATASET instead of orgUnit
-    } else if (entityType === 'Dataset') {
-      // return this.firstMetadataValue(object, dso, 'organization.legalName') || this.translateService.instant('dso.name.untitled'); <- the core code
-      // TAMU Customization - Item list view to show Dimension tile and Project long Title. It will default to one or the other if only one exists.
-      const datasetTitle = dso.firstMetadataValue('dc.title.dataset');
-      const projectTitle = dso.firstMetadataValue('dc.title.project');
-
-      if (datasetTitle && projectTitle) {
-          return `${datasetTitle}: Supplement to ${projectTitle}`;
-      } else if (datasetTitle) {
-          return datasetTitle;
-      } else if (projectTitle) {
-          return projectTitle;
-      } else {
-          return this.translateService.instant('dso.name.untitled');
-      }
-      // END TAMU Customization - Item list view to show Dimension tile and Project long Title. It will default to one or the other if only one exists.
+    } else if (entityType === 'OrgUnit') {
+      return this.firstMetadataValue(object, dso, 'organization.legalName') || this.translateService.instant('dso.name.untitled');
     }
-    // TAMU Customization - only added two || conditions up to dc.title.dataset after the || is core code.(dso.name and || this.translateService.instant('dso.name.untitled') )
-    return this.firstMetadataValue(object, dso, 'dc.title.project') || dso.firstMetadataValue('dc.title.dataset') || dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
+    return this.firstMetadataValue(object, dso, 'dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
   }
 
   /**

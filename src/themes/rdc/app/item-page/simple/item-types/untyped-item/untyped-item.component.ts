@@ -26,12 +26,24 @@ export class UntypedItemComponent extends BaseComponent {
 
   expanded: boolean = false;
 
+  getAbstractLabel(dso: DSpaceObject): string {
+    return this.isResearchProject(dso)
+      ? 'item.page.abstract-or-project-summary'
+      : 'item.page.abstract';
+  }
+
   toggleExpand(): void {
     this.expanded = !this.expanded;
   }
 
   hasAbstract(dso: DSpaceObject): boolean {
     return dso?.metadata?.abstract?.length > 0;
+  }
+
+  private isResearchProject(dso: DSpaceObject): boolean {
+    return dso?.getRenderTypes()
+      .filter((type) => typeof type === 'string')
+      .some((type: string) => 'ResearchProject' === type);
   }
 
 }
