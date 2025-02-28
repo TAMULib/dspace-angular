@@ -78,7 +78,7 @@
 
     <!-- TAMU Customization - Expand/collapse abstract -->
     <!-- <ds-item-page-abstract-field [item]="object"></ds-item-page-abstract-field> -->
-    <div class="truncate-container clearfix">
+    <div class="truncate-container clearfix" *ngIf="hasAbstract(object)">
       <div class="content-wrapper" [ngClass]="{ 'expanded': expanded }">
         <div class="content">
           <rdc-ds-item-page-abstract-field [item]="object" [label]="getAbstractLabel(object)"></rdc-ds-item-page-abstract-field>
