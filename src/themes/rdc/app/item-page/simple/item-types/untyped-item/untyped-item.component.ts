@@ -1,13 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Context } from '../../../../../../../app/core/shared/context.model';
+import { DSpaceObject } from '../../../../../../../app/core/shared/dspace-object.model';
 import { Item } from '../../../../../../../app/core/shared/item.model';
 import { ViewMode } from '../../../../../../../app/core/shared/view-mode.model';
 import {
-  listableObjectComponent
-} from '../../../../../../../app/shared/object-collection/shared/listable-object/listable-object.decorator';
-import { Context } from '../../../../../../../app/core/shared/context.model';
-import {
   UntypedItemComponent as BaseComponent
 } from '../../../../../../../app/item-page/simple/item-types/untyped-item/untyped-item.component';
+import {
+  listableObjectComponent
+} from '../../../../../../../app/shared/object-collection/shared/listable-object/listable-object.decorator';
 
 /**
  * Component that represents an untyped Item page
@@ -27,6 +28,10 @@ export class UntypedItemComponent extends BaseComponent {
 
   toggleExpand(): void {
     this.expanded = !this.expanded;
+  }
+
+  hasAbstract(dso: DSpaceObject): boolean {
+    return dso?.metadata?.abstract?.length > 0;
   }
 
 }
