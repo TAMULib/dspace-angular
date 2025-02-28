@@ -49,7 +49,14 @@
       [metadataFields]="['dc.creator.copi']"
       [label]="'Co-Principal Investigator(s)'">
     </ds-themed-metadata-representation-list>
-     <!-- END TAMU Customization - Co Principal Investigator -->
+    <!-- END TAMU Customization - Co Principal Investigator -->
+    <!-- TAMU Customization - Department  -->
+    <ds-themed-metadata-representation-list class="ds-item-page-mixed-author-field"
+      [parentItem]="object"
+      [metadataFields]="['dc.contributor.department']"
+      [label]="'Department'">
+    </ds-themed-metadata-representation-list>
+    <!-- END TAMU Customization - Department  -->
     <ds-generic-item-page-field [item]="object"
       [fields]="['journal.title']"
       [label]="'item.page.journal-title'">
