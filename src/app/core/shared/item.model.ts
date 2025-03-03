@@ -1,5 +1,5 @@
 import { autoserialize, autoserializeAs, deserialize, deserializeAs, inheritSerialization } from 'cerialize';
-import { Observable, of } from 'rxjs';
+import { Observable, of, switchMap, take } from 'rxjs';
 import { isEmpty } from '../../shared/empty.util';
 import { ListableObject } from '../../shared/object-collection/shared/listable-object.model';
 import { link, typedObject } from '../cache/builders/build-decorators';
@@ -135,20 +135,26 @@ export class Item extends DSpaceObject implements ChildHALResource, HandleObject
       } as Bitstream
     );
 
-    const type = this.metadata?.['dspace.entity.type']?.[0]?.value;
+    return this._thumbnail.pipe(
+      switchMap(bs => {
+        if (bs?.payload === undefined || bs?.payload === null) {
+          const type = this.metadata?.['dspace.entity.type']?.[0]?.value;
 
-    if (type) {
-      switch (type) {
-        case 'Dataset':
-          return of(bitstream('assets/images/project-placeholder.svg'));
-        case 'PDAC':
-          return of(bitstream('assets/images/person-placeholder.svg'));
-        case 'ResearchProject':
-          return of(bitstream('assets/images/orgunit-placeholder.svg'));
-      }
-    }
+          if (type) {
+            switch (type) {
+              case 'Dataset':
+                return of(bitstream('assets/images/project-placeholder.svg'));
+              case 'PDAC':
+                return of(bitstream('assets/images/person-placeholder.svg'));
+              case 'ResearchProject':
+                return of(bitstream('assets/images/orgunit-placeholder.svg'));
+            }
+          }
+        }
 
-    return this._thumbnail;
+        return of(bs);
+      })
+    );
   }
 
   public set thumbnail(thumbnail: Observable<RemoteData<Bitstream>>) {
