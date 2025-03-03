@@ -115,7 +115,7 @@ export class Item extends DSpaceObject implements ChildHALResource, HandleObject
    * Will be undefined unless the thumbnail {@link HALLink} has been resolved.
    */
   @link(BITSTREAM, false, 'thumbnail')
-  // TAMU Customization: override thumbnail getter to return thumbnail per entity type
+  // TAMU Customization: override thumbnail getter to return default thumbnail per entity type
   _thumbnail?: Observable<RemoteData<Bitstream>>;
   // thumbnail?: Observable<RemoteData<Bitstream>>;
 
@@ -160,7 +160,7 @@ export class Item extends DSpaceObject implements ChildHALResource, HandleObject
   public set thumbnail(thumbnail: Observable<RemoteData<Bitstream>>) {
     this._thumbnail = thumbnail;
   }
-  // END TAMU Customization: override thumbnail getter to return thumbnail per entity type
+  // END TAMU Customization: override thumbnail getter to return default thumbnail per entity type
 
   /**
    * The access status for this Item
