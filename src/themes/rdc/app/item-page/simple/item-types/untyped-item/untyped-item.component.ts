@@ -40,10 +40,21 @@ export class UntypedItemComponent extends BaseComponent {
     return dso?.metadata?.abstract?.length > 0;
   }
 
+  hasAssociatedPublicationURI(dso: DSpaceObject): boolean {
+    return (this.isResearchProject(dso) || this.isDataset(dso))
+      && dso?.metadata?.['dc.relation.associatedPublicationURI']?.length > 0
+  }
+
   private isResearchProject(dso: DSpaceObject): boolean {
     return dso?.getRenderTypes()
       .filter((type) => typeof type === 'string')
       .some((type: string) => 'ResearchProject' === type);
+  }
+
+  private isDataset(dso: DSpaceObject): boolean {
+    return dso?.getRenderTypes()
+      .filter((type) => typeof type === 'string')
+      .some((type: string) => 'Dataset' === type);
   }
 
 }

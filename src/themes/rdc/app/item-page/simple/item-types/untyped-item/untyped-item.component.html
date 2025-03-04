@@ -116,11 +116,11 @@
     </ds-item-page-uri-field>
     <ds-item-page-collections [item]="object"></ds-item-page-collections>
     <!-- TAMU Customization - Associated publication links -->
-    <div class="simple-item-view-element" *ngIf="object.allMetadata('dc.relation.associatedPublicationURI'); let uris">
+    <div class="simple-item-view-element" *ngIf="hasAssociatedPublicationURI(object)">
       <h2 class="simple-view-element-header fs-4">{{"item.page.associated-publications" | translate}}</h2>
       <div class="mb-2" class="uri-truncate">
         <ul>
-          <li *ngFor="let uri of uris">
+          <li *ngFor="let uri of object.allMetadata('dc.relation.associatedPublicationURI')">
             <a href="{{ uri.value }}" class="uri-truncate">
               {{ uri.value }}
             </a>
