@@ -3,9 +3,11 @@
 
   "item.page.associated-datasets": "Associated Datasets",
 
-  "item.page.source": "Access at repository",
+  "item.page.associated-publications": "Associated Publications",
 
   "item.page.research-project": "Research Project",
+
+  "item.page.source": "Access at repository",
 
   "item.author.uri": "Researcher Profile",
 
