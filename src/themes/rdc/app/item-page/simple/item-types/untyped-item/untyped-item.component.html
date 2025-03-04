@@ -38,7 +38,7 @@
     <ds-themed-metadata-representation-list class="ds-item-page-mixed-author-field"
       [parentItem]="object"
       [itemType]="'Person'"
-      [metadataFields]="['dc.contributor.pi', 'dc.creator.pi']"
+      [metadataFields]="['dc.creator.pi']"
       [label]="'Principal Investigator'">
     </ds-themed-metadata-representation-list>
     <!-- END TAMU Customization - Principal Investigator  -->
@@ -49,7 +49,14 @@
       [metadataFields]="['dc.creator.copi']"
       [label]="'Co-Principal Investigator(s)'">
     </ds-themed-metadata-representation-list>
-     <!-- END TAMU Customization - Co Principal Investigator -->
+    <!-- END TAMU Customization - Co Principal Investigator -->
+    <!-- TAMU Customization - Department  -->
+    <ds-themed-metadata-representation-list class="ds-item-page-mixed-author-field"
+      [parentItem]="object"
+      [metadataFields]="['dc.contributor.department']"
+      [label]="'Department'">
+    </ds-themed-metadata-representation-list>
+    <!-- END TAMU Customization - Department  -->
     <ds-generic-item-page-field [item]="object"
       [fields]="['journal.title']"
       [label]="'item.page.journal-title'">
@@ -71,7 +78,7 @@
 
     <!-- TAMU Customization - Expand/collapse abstract -->
     <!-- <ds-item-page-abstract-field [item]="object"></ds-item-page-abstract-field> -->
-    <div class="truncate-container clearfix">
+    <div class="truncate-container clearfix" *ngIf="hasAbstract(object)">
       <div class="content-wrapper" [ngClass]="{ 'expanded': expanded }">
         <div class="content">
           <rdc-ds-item-page-abstract-field [item]="object" [label]="getAbstractLabel(object)"></rdc-ds-item-page-abstract-field>

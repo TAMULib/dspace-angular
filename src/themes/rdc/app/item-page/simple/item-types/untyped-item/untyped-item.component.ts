@@ -36,6 +36,10 @@ export class UntypedItemComponent extends BaseComponent {
     this.expanded = !this.expanded;
   }
 
+  hasAbstract(dso: DSpaceObject): boolean {
+    return dso?.metadata?.abstract?.length > 0;
+  }
+
   private isResearchProject(dso: DSpaceObject): boolean {
     return dso?.getRenderTypes()
       .filter((type) => typeof type === 'string')
