@@ -40,6 +40,11 @@ export class UntypedItemComponent extends BaseComponent {
     return dso?.metadata?.abstract?.length > 0;
   }
 
+  hasProject(dso: DSpaceObject): boolean {
+    return dso?.metadata?.['dc.title.project']?.length > 0
+      && dso?.metadata?.['dc.relation.sourceResearchProject']?.length > 0;
+  }
+
   private isResearchProject(dso: DSpaceObject): boolean {
     return dso?.getRenderTypes()
       .filter((type) => typeof type === 'string')
