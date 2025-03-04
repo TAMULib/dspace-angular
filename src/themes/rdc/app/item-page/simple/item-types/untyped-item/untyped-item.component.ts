@@ -32,6 +32,27 @@ export class UntypedItemComponent extends BaseComponent {
       : 'item.page.abstract';
   }
 
+  getDatasets(dso: DSpaceObject): { title: string, link: string }[] {
+    const datasets = [];
+
+    const titles = dso?.metadata?.['dc.title.dataset'];
+    const links = dso?.metadata?.['dc.relation.hasDataset'];
+
+    if (titles.length !== links.length) {
+      console.error('Found mismatch in virtualized dataset metadata');
+      return datasets;
+    }
+
+    for (let i = 0; i < titles.length - 1; i++) {
+      datasets.push({
+        title: titles[i].value,
+        link: links[i].value
+      });
+    }
+
+    return datasets;
+  }
+
   toggleExpand(): void {
     this.expanded = !this.expanded;
   }
@@ -40,10 +61,26 @@ export class UntypedItemComponent extends BaseComponent {
     return dso?.metadata?.abstract?.length > 0;
   }
 
+  hasDatasets(dso: DSpaceObject): boolean {
+    return this.isResearchProject(dso) && dso?.metadata?.['dc.title.dataset']?.length > 0
+      && dso?.metadata?.['dc.relation.hasDataset']?.length > 0;
+  }
+
+  hasProject(dso: DSpaceObject): boolean {
+    return this.isDataset(dso) && dso?.metadata?.['dc.title.project']?.length > 0
+      && dso?.metadata?.['dc.relation.sourceResearchProject']?.length > 0;
+  }
+
   private isResearchProject(dso: DSpaceObject): boolean {
     return dso?.getRenderTypes()
       .filter((type) => typeof type === 'string')
       .some((type: string) => 'ResearchProject' === type);
+  }
+
+  private isDataset(dso: DSpaceObject): boolean {
+    return dso?.getRenderTypes()
+      .filter((type) => typeof type === 'string')
+      .some((type: string) => 'Dataset' === type);
   }
 
 }
