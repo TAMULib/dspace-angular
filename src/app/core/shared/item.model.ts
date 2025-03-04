@@ -143,7 +143,7 @@ export class Item extends DSpaceObject implements ChildHALResource, HandleObject
           if (type) {
             switch (type) {
               case 'Dataset':
-                return of(bitstream('assets/images/noun-database-7512767-676767.svg'));
+                return of(bitstream('assets/images/noun-dataset-7512767-676767.svg'));
               case 'PDAC':
                 return of(bitstream('assets/images/noun-pdac-1987643-676767.svg'));
               case 'ResearchProject':
