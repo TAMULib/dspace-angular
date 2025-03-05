@@ -43,11 +43,11 @@
     </ds-themed-metadata-representation-list>
     <!-- END TAMU Customization - Principal Investigator  -->
     <!-- TAMU Customization - Co-Principal Investigator -->
-    <div class="simple-item-view-element" *ngIf="object.allMetadata('dc.creator.copi'); let copis">
+    <div class="simple-item-view-element" *ngIf="hasCoPrincipalInvestigator(object)">
       <h2 class="simple-view-element-header fs-4">{{"item.page.co-principal-investigators" | translate}}</h2>
       <div class="mb-2">
         <ul class="list-unstyled">
-          <li *ngFor="let copi of copis">
+          <li *ngFor="let copi of object.allMetadata('dc.creator.copi')">
             <span>{{copi.value}}</span>
           </li>
         </ul>
@@ -135,14 +135,13 @@
     <div class="simple-item-view-element mb-2" *ngIf="hasDatasets(object)">
       <h2 class="simple-view-element-header fs-4">{{"item.page.associated-datasets" | translate}}</h2>
       <div *ngIf="getDatasets(object); let datasets">
-        <div>
-          <ul class="list-unstyled">
-            <li *ngFor="let dataset of datasets">
-              <a href="{{dataset.link}}">
-                {{dataset.title}}
-              </a>
-            </li>
-          </ul>
+        <ul class="list-unstyled">
+          <li *ngFor="let dataset of datasets">
+            <a href="{{dataset.link}}">
+              {{dataset.title}}
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
     <!-- END TAMU Customization - dataset links -->
