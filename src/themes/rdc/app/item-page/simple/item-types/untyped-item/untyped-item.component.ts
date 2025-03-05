@@ -43,7 +43,7 @@ export class UntypedItemComponent extends BaseComponent {
       return datasets;
     }
 
-    for (let i = 0; i < titles.length - 1; i++) {
+    for (let i = 0; i < titles.length; i++) {
       datasets.push({
         title: titles[i].value,
         link: links[i].value
