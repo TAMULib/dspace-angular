@@ -47,7 +47,8 @@
 
   ul li a.uri-truncate {
     display: inline-block;
-    max-width: 250px;
+    line-height: 1.25;
+    max-width: 350px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
