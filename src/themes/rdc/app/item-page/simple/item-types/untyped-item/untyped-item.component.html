@@ -39,22 +39,26 @@
       [parentItem]="object"
       [itemType]="'Person'"
       [metadataFields]="['dc.creator.pi']"
-      [label]="'Principal Investigator'">
+      [label]="'item.page.principal-investigators' | translate">
     </ds-themed-metadata-representation-list>
     <!-- END TAMU Customization - Principal Investigator  -->
-    <!-- TAMU Customization - Co Principal Investigator -->
-    <ds-themed-metadata-representation-list class="ds-item-page-mixed-author-field"
-      [parentItem]="object"
-      [itemType]="'Person'"
-      [metadataFields]="['dc.creator.copi']"
-      [label]="'Co-Principal Investigator(s)'">
-    </ds-themed-metadata-representation-list>
-    <!-- END TAMU Customization - Co Principal Investigator -->
+    <!-- TAMU Customization - Co-Principal Investigator -->
+    <div class="simple-item-view-element" *ngIf="object.allMetadata('dc.creator.copi'); let copis">
+      <h2 class="simple-view-element-header fs-4">{{"item.page.co-principal-investigators" | translate}}</h2>
+      <div class="mb-2">
+        <ul class="list-unstyled">
+          <li *ngFor="let copi of copis">
+            <span>{{copi.value}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- END TAMU Customization - Co-Principal Investigator -->
     <!-- TAMU Customization - Department  -->
     <ds-themed-metadata-representation-list class="ds-item-page-mixed-author-field"
       [parentItem]="object"
       [metadataFields]="['dc.contributor.department']"
-      [label]="'Department'">
+      [label]="'item.page.department' | translate">
     </ds-themed-metadata-representation-list>
     <!-- END TAMU Customization - Department  -->
     <ds-generic-item-page-field [item]="object"
@@ -132,7 +136,7 @@
       <h2 class="simple-view-element-header fs-4">{{"item.page.associated-datasets" | translate}}</h2>
       <div *ngIf="getDatasets(object); let datasets">
         <div>
-          <ul>
+          <ul class="list-unstyled">
             <li *ngFor="let dataset of datasets">
               <a href="{{dataset.link}}">
                 {{dataset.title}}
@@ -147,7 +151,7 @@
     <div class="simple-item-view-element" *ngIf="hasAssociatedPublicationURI(object)">
       <h2 class="simple-view-element-header fs-4">{{"item.page.associated-publications" | translate}}</h2>
       <div class="mb-2" class="uri-truncate">
-        <ul>
+        <ul class="list-unstyled">
           <li *ngFor="let uri of object.allMetadata('dc.relation.associatedPublicationURI')">
             <a href="{{uri.value}}" class="uri-truncate">
               {{uri.value}}

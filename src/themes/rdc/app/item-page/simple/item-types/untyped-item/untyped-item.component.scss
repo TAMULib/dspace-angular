@@ -3,6 +3,10 @@
 :host {
   display: block;
 
+  .simple-item-view-element {
+    margin-bottom: 15px;
+  }
+
   .truncate-container {
     position: relative;
     width: 100%;
