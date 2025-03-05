@@ -58,7 +58,8 @@ export class UntypedItemComponent extends BaseComponent {
   }
 
   hasAbstract(dso: DSpaceObject): boolean {
-    return dso?.metadata?.abstract?.length > 0;
+    return (this.isResearchProject(dso) || this.isDataset(dso))
+      && dso?.metadata?.['dc.description.abstract']?.length > 0;
   }
 
   hasAssociatedPublicationURI(dso: DSpaceObject): boolean {
@@ -66,19 +67,21 @@ export class UntypedItemComponent extends BaseComponent {
       && dso?.metadata?.['dc.relation.associatedPublicationURI']?.length > 0
   }
 
+  hasCoPrincipalInvestigator(dso: DSpaceObject): boolean {
+    return (this.isResearchProject(dso) || this.isDataset(dso))
+      && dso?.metadata?.['dc.creator.copi']?.length > 0
+  }
+
   hasDatasets(dso: DSpaceObject): boolean {
-    return this.isResearchProject(dso) && dso?.metadata?.['dc.title.dataset']?.length > 0
+    return this.isResearchProject(dso)
+      && dso?.metadata?.['dc.title.dataset']?.length > 0
       && dso?.metadata?.['dc.relation.hasDataset']?.length > 0;
   }
 
   hasProject(dso: DSpaceObject): boolean {
-    return this.isDataset(dso) && dso?.metadata?.['dc.title.project']?.length > 0
+    return this.isDataset(dso)
+      && dso?.metadata?.['dc.title.project']?.length > 0
       && dso?.metadata?.['dc.relation.sourceResearchProject']?.length > 0;
-  }
-
-  hasCoPrincipalInvestigator(dso: DSpaceObject): boolean {
-    return (this.isResearchProject(dso) || this.isDataset(dso))
-      && dso?.metadata?.['dc.creator.copi']?.length > 0
   }
 
   private isResearchProject(dso: DSpaceObject): boolean {
