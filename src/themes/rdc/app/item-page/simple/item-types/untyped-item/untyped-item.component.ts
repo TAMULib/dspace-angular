@@ -61,6 +61,11 @@ export class UntypedItemComponent extends BaseComponent {
     return dso?.metadata?.abstract?.length > 0;
   }
 
+  hasAssociatedPublicationURI(dso: DSpaceObject): boolean {
+    return (this.isResearchProject(dso) || this.isDataset(dso))
+      && dso?.metadata?.['dc.relation.associatedPublicationURI']?.length > 0
+  }
+
   hasDatasets(dso: DSpaceObject): boolean {
     return this.isResearchProject(dso) && dso?.metadata?.['dc.title.dataset']?.length > 0
       && dso?.metadata?.['dc.relation.hasDataset']?.length > 0;
