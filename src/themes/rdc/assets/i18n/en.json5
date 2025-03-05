@@ -1,6 +1,12 @@
 {
   "item.page.abstract-or-project-summary": "Abstract or Project Summary",
 
+  "item.page.associated-datasets": "Associated Datasets",
+
+  "item.page.associated-publications": "Associated Publications",
+
+  "item.page.research-project": "Research Project",
+
   "item.page.source": "Access at repository",
 
   "item.author.uri": "Researcher Profile",
@@ -25,15 +31,29 @@
 
   "researchproject.listelement.badge": "Research Project",
 
-  "researchproject.page.titleprefix": "Research Project:",
+  "researchproject.listelement.no-title": "Untitled",
 
-  "researchproject.page.edit": "Edit this Research Project",
+  "researchproject.page.edit": "Edit this research project",
+
+  "researchproject.page.id": "ID",
+
+  "researchproject.page.titleprefix": "Research Project: ",
+
+  "researchproject.search.results.head": "Research Project Search Results",
+
+  "researchproject-relationships.search.results.head": "Research Project Search Results",
 
   "submission.sections.describe.relationship-lookup.title.Dataset": "Dataset",
 
   "submission.sections.describe.relationship-lookup.selection-tab.title.Dataset": "Dataset",
 
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.Dataset": "Dataset",
+
+  "submission.sections.describe.relationship-lookup.title.ResearchProject": "Research Project",
+
+  "submission.sections.describe.relationship-lookup.selection-tab.title.ResearchProject": "Research Project",
+
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.ResearchProject": "Research Project",
 
   "pdac.listelement.badge": "PDAC",
 
