@@ -1,0 +1,4 @@
+a:hover .thumbnail-content {
+  // filter SVG path color from #a7a7a7 to #500000
+  filter: brightness(0%) saturate(100%) invert(10%) sepia(100%) saturate(5897%) hue-rotate(345deg) brightness(39%) contrast(112%);
+}
