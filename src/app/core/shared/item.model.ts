@@ -135,24 +135,36 @@ export class Item extends DSpaceObject implements ChildHALResource, HandleObject
       } as Bitstream
     );
 
+    const byType = () => {
+      const type = this.metadata?.['dspace.entity.type']?.[0]?.value;
+
+      if (type) {
+        switch (type) {
+          case 'Dataset':
+            return of(bitstream('assets/images/dataset-placeholder.svg'));
+          case 'PDAC':
+            return of(bitstream('assets/images/person-placeholder.svg'));
+          case 'ResearchProject':
+            return of(bitstream('assets/images/research-project-placeholder.svg'));
+        }
+      }
+    }
+
+    if (this._thumbnail === undefined || this._thumbnail === null) {
+      return byType();
+    }
+
     return this._thumbnail.pipe(
       switchMap(bs => {
+        let result = of(bs);
         if (bs?.payload === undefined || bs?.payload === null) {
-          const type = this.metadata?.['dspace.entity.type']?.[0]?.value;
-
-          if (type) {
-            switch (type) {
-              case 'Dataset':
-                return of(bitstream('assets/images/dataset-placeholder.svg'));
-              case 'PDAC':
-                return of(bitstream('assets/images/person-placeholder.svg'));
-              case 'ResearchProject':
-                return of(bitstream('assets/images/research-project-placeholder.svg'));
-            }
+          const typeResult = byType();
+          if (typeResult) {
+            result = typeResult;
           }
         }
 
-        return of(bs);
+        return result;
       })
     );
   }
