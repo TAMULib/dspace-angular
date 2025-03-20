@@ -1,5 +1,5 @@
 import { autoserialize, autoserializeAs, deserialize, deserializeAs, inheritSerialization } from 'cerialize';
-import { Observable } from 'rxjs';
+import { Observable, of, switchMap } from 'rxjs';
 import { isEmpty } from '../../shared/empty.util';
 import { ListableObject } from '../../shared/object-collection/shared/listable-object.model';
 import { link, typedObject } from '../cache/builders/build-decorators';
@@ -115,14 +115,71 @@ export class Item extends DSpaceObject implements ChildHALResource, HandleObject
    * Will be undefined unless the thumbnail {@link HALLink} has been resolved.
    */
   @link(BITSTREAM, false, 'thumbnail')
-  thumbnail?: Observable<RemoteData<Bitstream>>;
+  // TAMU Customization: override thumbnail getter to return default thumbnail per entity type
+  _thumbnail?: Observable<RemoteData<Bitstream>>;
+  // thumbnail?: Observable<RemoteData<Bitstream>>;
+
+  public get thumbnail(): Observable<RemoteData<Bitstream>> {
+
+    const bitstream = (href): RemoteData<Bitstream> => new RemoteData(
+      0, 0, 0, undefined, undefined,
+      {
+        sizeBytes: 0,
+        description: '',
+        bundleName: '',
+        _links: {
+          content: {
+            href
+          }
+        }
+      } as Bitstream
+    );
+
+    const byType = () => {
+      const type = this.metadata?.['dspace.entity.type']?.[0]?.value;
+
+      if (type) {
+        switch (type) {
+          case 'Dataset':
+            return of(bitstream('assets/images/dataset-placeholder.svg'));
+          case 'PDAC':
+            return of(bitstream('assets/images/person-placeholder.svg'));
+          case 'ResearchProject':
+            return of(bitstream('assets/images/research-project-placeholder.svg'));
+        }
+      }
+    }
+
+    if (this._thumbnail === undefined || this._thumbnail === null) {
+      return byType();
+    }
+
+    return this._thumbnail.pipe(
+      switchMap(bs => {
+        let result = of(bs);
+        if (bs?.payload === undefined || bs?.payload === null) {
+          const typeResult = byType();
+          if (typeResult) {
+            result = typeResult;
+          }
+        }
+
+        return result;
+      })
+    );
+  }
+
+  public set thumbnail(thumbnail: Observable<RemoteData<Bitstream>>) {
+    this._thumbnail = thumbnail;
+  }
+  // END TAMU Customization: override thumbnail getter to return default thumbnail per entity type
 
   /**
    * The access status for this Item
    * Will be undefined unless the access status {@link HALLink} has been resolved.
    */
-   @link(ACCESS_STATUS)
-   accessStatus?: Observable<RemoteData<AccessStatusObject>>;
+  @link(ACCESS_STATUS)
+  accessStatus?: Observable<RemoteData<AccessStatusObject>>;
 
   /**
    * The identifier data for this Item

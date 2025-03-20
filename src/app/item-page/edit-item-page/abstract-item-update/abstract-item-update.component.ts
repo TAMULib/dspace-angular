@@ -54,7 +54,7 @@ export class AbstractItemUpdateComponent extends AbstractTrackableComponent impl
     public translateService: TranslateService,
     public route: ActivatedRoute
   ) {
-    super(objectUpdatesService, notificationsService, translateService);
+    super(objectUpdatesService, notificationsService, translateService, router);
   }
 
   /**
@@ -79,12 +79,9 @@ export class AbstractItemUpdateComponent extends AbstractTrackableComponent impl
         this.setItem(rd.payload);
       });
     }
+    super.ngOnInit();
 
     this.discardTimeOut = environment.item.edit.undoTimeout;
-    this.url = this.router.url;
-    if (this.url.indexOf('?') > 0) {
-      this.url = this.url.substr(0, this.url.indexOf('?'));
-    }
     this.hasChanges().pipe(first()).subscribe((hasChanges) => {
       if (!hasChanges) {
         this.initializeOriginalFields();
