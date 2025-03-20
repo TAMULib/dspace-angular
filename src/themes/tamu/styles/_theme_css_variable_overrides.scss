@@ -1,11 +1,28 @@
 // Override or add CSS variables for your theme here
 
 :root {
-  --ds-header-logo-height: 40px;
+
+  @include media-breakpoint-up(md) {
+    --ds-header-logo-height: 40px;
+    --ds-header-height: 80px;
+  }
+  @include media-breakpoint-down(sm) {
+    --ds-header-logo-height: 50px;
+    --ds-header-height: 90px;
+  }
 
   --ds-banner-text-background: rgba(0, 0, 0, 0.45);
   --ds-banner-background-gradient-width: 300px;
 
+  --ds-header-navbar-border-bottom-height: 5px;
+
+  /* set the next two properties as `--ds-header-navbar-border-bottom-*`
+  in order to keep the bottom border of the header when navbar is expanded */
+  --ds-expandable-navbar-border-top-color: #{$white};
+  --ds-expandable-navbar-border-top-height: 0;
+  --ds-expandable-navbar-padding-top: 0;
+
+  /* TAMU Customization */
   --ds-header-navbar-border-bottom-color: #{$primary};
 
   --ds-navbar-link-color: #{$primary};
@@ -13,5 +30,5 @@
 
   --ds-breadcrumb-link-color: #{$primary};
   --ds-breadcrumb-link-active-color: #{darken($primary, 30%)};
+  /* END TAMU Customization */
 }
-

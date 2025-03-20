@@ -15,6 +15,8 @@ import { StatisticsModule } from '../../app/statistics/statistics.module';
 import { HeaderNavbarWrapperComponent } from './app/header-nav-wrapper/header-navbar-wrapper.component';
 import { HeaderComponent } from './app/header/header.component';
 import { HomeNewsComponent } from './app/home-page/home-news/home-news.component';
+import { LoginPageComponent } from './app/login-page/login-page.component';
+import { LogoutPageComponent } from './app/logout-page/logout-page.component';
 import { NavbarComponent } from './app/navbar/navbar.component';
 
 /**
@@ -30,6 +32,8 @@ const DECLARATIONS = [
   HomeNewsComponent,
   HeaderComponent,
   HeaderNavbarWrapperComponent,
+  LoginPageComponent,
+  LogoutPageComponent,
   NavbarComponent,
 ];
 
