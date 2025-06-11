@@ -1670,6 +1670,9 @@
   // "browse.startsWith.months.september": "September",
   "browse.startsWith.months.september": "setembre",
 
+  // "browse.startsWith.placeholder": "Search the repository",
+  "browse.startsWith.placeholder": "Cerca al repositori",
+
   // "browse.startsWith.submit": "Browse",
   "browse.startsWith.submit": "Examinar",
 

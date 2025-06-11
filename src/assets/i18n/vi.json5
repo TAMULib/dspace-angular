@@ -1836,6 +1836,9 @@
   // "browse.startsWith.months.september": "September",
   "browse.startsWith.months.september": "Tháng Chín",
 
+  // "browse.startsWith.placeholder": "Search the repository",
+  "browse.startsWith.placeholder": "Search the repository",
+
   // "browse.startsWith.submit": "Browse",
   "browse.startsWith.submit": "Duyệt",
 

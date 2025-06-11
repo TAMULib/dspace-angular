@@ -1105,6 +1105,8 @@
 
   "browse.startsWith.months.september": "September",
 
+  "browse.startsWith.placeholder": "Search the repository",
+
   "browse.startsWith.submit": "Browse",
 
   "browse.startsWith.type_date": "Filter results by date",

@@ -1949,6 +1949,9 @@
   // "browse.startsWith.months.september": "September",
   "browse.startsWith.months.september": "Eylül",
 
+  // "browse.startsWith.placeholder": "Search the repository",
+  "browse.startsWith.placeholder": "Search the repository",
+
   // "browse.startsWith.submit": "Browse",
   // TODO Source message changed - Revise the translation
   "browse.startsWith.submit": "Git",

@@ -1688,6 +1688,9 @@
   // "browse.startsWith.months.september": "September",
   "browse.startsWith.months.september": "सितंबर",
 
+  // "browse.startsWith.placeholder": "Search the repository",
+  "browse.startsWith.placeholder": "रिपॉजिटरी खोजें",
+
   // "browse.startsWith.submit": "Browse",
   "browse.startsWith.submit": "ब्राउज़ करें",
 

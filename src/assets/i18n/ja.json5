@@ -2211,6 +2211,10 @@
   // TODO New key - Add a translation
   "browse.startsWith.months.september": "September",
 
+  // "browse.startsWith.placeholder": "Search the repository",
+  // TODO New key - Add a translation
+  "browse.startsWith.placeholder": "Search the repository",
+
   // "browse.startsWith.submit": "Browse",
   // TODO New key - Add a translation
   "browse.startsWith.submit": "Browse",
