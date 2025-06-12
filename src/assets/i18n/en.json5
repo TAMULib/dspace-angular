@@ -870,13 +870,15 @@
 
   "browse.startsWith.months.september": "September",
 
+  "browse.startsWith.placeholder": "Enter the first few letters.",
+
   "browse.startsWith.submit": "Browse",
 
   "browse.startsWith.type_date": "Filter results by date",
 
   "browse.startsWith.type_date.label": "Or type in a date (year-month) and click on the Browse button",
 
-  "browse.startsWith.type_text": "Filter results by typing the first few letters",
+  "browse.startsWith.type_text": "Enter the first few letters to jump to a point in the index. To instead do a general search, click <a href=\"/search\">here</a>.",
 
   "browse.startsWith.input": "Filter",
 
@@ -5366,5 +5368,5 @@
 
   "process.overview.unknown.user": "Unknown",
 
-  "browse.search-form.placeholder": "Search the repository",
+  "browse.search-form.placeholder": "Search the repository"
 }
