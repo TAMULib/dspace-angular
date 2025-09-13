@@ -4912,6 +4912,10 @@
 
   "search.view-switch.show-geospatialMap": "Show as map",
 
+  "search-page.heading": "Search OAKTrust",
+
+  "search-page.configuration.heading": "Search Configuration",
+
   "selectable-list-item-control.deselect": "Deselect item",
 
   "selectable-list-item-control.select": "Select item",
