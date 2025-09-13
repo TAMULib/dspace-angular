@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { HeadingComponent } from './heading.component';
 
 // do not change headingElements and HeadlingLevel independently
-// the must be exactly the same
+// they must be exactly the same
 export const headingElements = ['h1', 'h2', 'h3', 'h4', 'h5'];
 export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 
