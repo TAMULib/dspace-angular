@@ -1,1 +1,9 @@
-<ds-search [showCsvExport]="true" [trackStatistics]="true"></ds-search>
+<!-- this would be easier, could be automatically determined, and could validate entire header structure to provide alert
+<ds-heading class="sr-only" level="h1" text="{{ 'search.page.heading' | translate }}" />
+-->
+<h1 class="sr-only">{{ 'search.page.heading' | translate }}</h1>
+<!-- this would be easier, could be automatically determined, and could validate entire header structure to provide alert
+<ds-heading class="sr-only" level="h2" text="{{ 'search.page.configuration.heading' | translate }}" />
+-->
+<h2 class="sr-only">{{ 'search.page.heading' | translate }}</h2>
+<ds-search [showCsvExport]="true" [trackStatistics]="true" />

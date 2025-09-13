@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -30,6 +30,7 @@ import {
   isNotEmpty,
 } from '../../empty.util';
 import { ErrorComponent } from '../../error/error.component';
+import { HeadingComponent } from '../../heading/heading.component';
 import { CollectionElementLinkType } from '../../object-collection/collection-element-link.type';
 import { ObjectCollectionComponent } from '../../object-collection/object-collection.component';
 import { ListableObject } from '../../object-collection/shared/listable-object.model';
@@ -55,14 +56,16 @@ export interface SelectionConfig {
   ],
   standalone: true,
   imports: [
+    CommonModule,
+    TranslateModule,
     AsyncPipe,
     ErrorComponent,
+    HeadingComponent,
     NgxSkeletonLoaderModule,
     ObjectCollectionComponent,
     RouterLink,
     SearchExportCsvComponent,
     SearchResultsSkeletonComponent,
-    TranslateModule,
   ],
 })
 

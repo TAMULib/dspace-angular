@@ -1,0 +1,8 @@
+@switch (level) {
+  @case ('h1') { <h1 [id]="id" [class]="class">{{text}}</h1> }
+  @case ('h2') { <h2 [id]="id" [class]="class">{{text}}</h2> }
+  @case ('h3') { <h3 [id]="id" [class]="class">{{text}}</h3> }
+  @case ('h4') { <h4 [id]="id" [class]="class">{{text}}</h4> }
+  @case ('h5') { <h5 [id]="id" [class]="class">{{text}}</h5> }
+  @default { <span [id]="id" [class]="class">{{text}}</span> }
+}

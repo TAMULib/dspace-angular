@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -9,6 +9,7 @@ import {
   fadeInOut,
 } from '../../../../../../app/shared/animations/fade';
 import { ErrorComponent } from '../../../../../../app/shared/error/error.component';
+import { HeadingComponent } from '../../../../../../app/shared/heading/heading.component';
 import { ObjectCollectionComponent } from '../../../../../../app/shared/object-collection/object-collection.component';
 import { SearchExportCsvComponent } from '../../../../../../app/shared/search/search-export-csv/search-export-csv.component';
 import { SearchResultsComponent as BaseComponent } from '../../../../../../app/shared/search/search-results/search-results.component';
@@ -25,14 +26,16 @@ import { SearchResultsSkeletonComponent } from '../../../../../../app/shared/sea
   ],
   standalone: true,
   imports: [
+    CommonModule,
+    TranslateModule,
     AsyncPipe,
     ErrorComponent,
+    HeadingComponent,
     NgxSkeletonLoaderModule,
     ObjectCollectionComponent,
     RouterLink,
     SearchExportCsvComponent,
     SearchResultsSkeletonComponent,
-    TranslateModule,
   ],
 })
 export class SearchResultsComponent extends BaseComponent {

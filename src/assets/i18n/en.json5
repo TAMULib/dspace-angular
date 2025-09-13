@@ -4545,6 +4545,10 @@
 
   "search.description": "",
 
+  "search.heading": "Search OAKTrust",
+
+  "search.configuration.heading": "Search Configuration",
+
   "search.switch-configuration.title": "Show",
 
   "search.title": "Search",

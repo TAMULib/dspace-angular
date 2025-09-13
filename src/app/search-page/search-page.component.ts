@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { SearchConfigurationService } from '../core/shared/search/search-configuration.service';
 import { SEARCH_CONFIG_SERVICE } from '../my-dspace-page/my-dspace-configuration.service';
+import { HeadingComponent } from '../shared/heading/heading.component';
 import { ThemedSearchComponent } from '../shared/search/themed-search.component';
 
 @Component({
@@ -15,6 +18,8 @@ import { ThemedSearchComponent } from '../shared/search/themed-search.component'
   ],
   standalone: true,
   imports: [
+    TranslateModule,
+    HeadingComponent,
     ThemedSearchComponent,
   ],
 })
