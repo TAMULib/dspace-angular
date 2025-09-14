@@ -11,10 +11,10 @@
 }
 
 <div class="d-flex justify-content-between">
-  <!-- this would be easier, could be automatically determined, and could validate entire header structure to provide alert
-  <ds-heading [ngClass]="{ 'sr-only' : disableHeader }" level="h2" text="{{ (configuration ? configuration + '.search.results.head' : 'search.results.head') | translate }}" />
-  -->
-  <h2 [ngClass]="{ 'sr-only' : disableHeader }">{{ (configuration ? configuration + '.search.results.head' : 'search.results.head') | translate }}</h2>
+  <ds-heading
+    [ngClass]="{ 'sr-only' : disableHeader }"
+    level="h2"
+    text="{{ (configuration ? configuration + '.search.results.head' : 'search.results.head') | translate }}" />
   @if (showCsvExport) {
     <ds-search-export-csv [searchConfig]="searchConfig" [total]="searchResults?.payload?.totalElements"></ds-search-export-csv>
   }
